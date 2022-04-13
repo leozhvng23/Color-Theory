@@ -1,2 +1,2 @@
-# UI-Group-Project
+# UI Group Project
 User Interface Design Final Project
