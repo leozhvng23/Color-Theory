@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+<script>
+    let user = {{user|tojson}}
+    let question = {{question|tojson}}
+</script>
+{% block left_arrow %}
+<div class="left_arrow">
+    Previous <i class="fa-solid fa-caret-left"></i>
+</div>
+
+{% endblock %}
+{% block content %}
+
+
+<div class="row">
+    <div class="col-6">
+
+        <div class="paintings">
+            <img src={{question.url}}>
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="row">
+            {% for color in question.colors %}
+            <div class="col-4">
+                <div style="background:{{color}};" class="color_circle"></div>
+            </div>
+            
+            {% endfor %}
+        </div>
+        <div class="row">
+            <div class="col-6 mid_drag_circle">drop three analogus colors here</div>
+        </div>
+        <div class="row">
+            <div class="col-6"></div>
+            <div class="col-6"></div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block right_arrow %}
+<div class="right_arrow">
+    Next <i class="fa-solid fa-caret-right"></i>
+</div>
+
+{% endblock %}
+
+{% block footnote %}
+<div class="row">
+    <div class="col-2">
+        <span>Section: 2/3</span>
+    </div>
+    <div class="col-8"></div>
+    
+    <div class="col-2">
+        <span>Score: {{user.score}}/10</span>
+    </div>
+</div>
+
+
+{% endblock %}
