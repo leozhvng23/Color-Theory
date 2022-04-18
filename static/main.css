@@ -82,7 +82,7 @@ a:hover{
 
 .pg_footnote{
     font-family: futura;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 /* navbar */
@@ -118,6 +118,25 @@ a:hover{
     vertical-align: middle;
     margin-top: 2px;
 }
+
+.footnote{
+    position: absolute;
+    bottom: 5%;
+    height: 20px;
+    width: 100%;
+}
+
+.left_footnote{
+    float: left;
+    margin-left: 100px;
+    display: inline-flex;
+}
+
+.right_footnote{
+    float: right;
+    margin-right: 100px;
+    display: inline-flex;
+}  
 
 /* for # IDs */
 
