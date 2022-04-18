@@ -77,6 +77,7 @@ img{
     -moz-border-radius: 25px;
     border-radius: 25px;
     margin: 10px auto;
+
   }
 
   .mid_drag_circle {
@@ -85,12 +86,16 @@ img{
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    background-color: lightgray;
+    background-color: #E9E9E9;
+    box-shadow: 3px 4px 7px #D6D6D6 inset;
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-style: italic;
+    color: #a1a1a1;
+    font-weight: bold;
   }
 
   /* quiz section 2 */
@@ -105,49 +110,51 @@ img{
      
     border-radius: 5%;
   }
-  .btn{
+  .choice_btn{
       margin: 5px;
+      border: 0px;
       background-color: lightgray;
+      font-style: italic;
+      color: #a1a1a1;
       width: 150px;
       height: 40px;
       border-radius: 20px;
   }
 
-  .btn:hover{
-      border: 1px solid #4295f5;
-  }
+.choice_btn:hover{
+    border: 1px solid #4295f5;
+}
 
-  .btn:active{
-    background-color:  #4295f5;
+.choice_btn:active{
+background-color:  #4295f5;
+color: black;
 }
-.btn:focus{
+.choice_btn:focus{
     background-color:  #4295f5;
+    color: black;
 }
-  .sec2_q1{
+.sec2_q1{
     max-width: 50%;
 }
-  .choice{
-      margin: 15px;
-      text-align: center;
-  }
+.choice{
+    margin: 15px;
+    text-align: center;
+}
 
-<<<<<<< HEAD
-  .arrow{
-      background-color: white;
-      border: 0px;
-      margin-top: 70%;
-  }
-  i{
-      height: 20px;
-      width: 10px;
-  }
+.arrow{
+    background-color: white;
+    border: 0px;
+    margin-top: 70%;
+}
+i{
+    height: 20px;
+    width: 10px;
+}
 
-  /* quiz end */
-  .end_score{
-      margin-top: 100px;
-  }
-=======
-
+/* quiz end */
+.end_score{
+    margin-top: 100px;
+}
 
 
 .color-choices {
@@ -253,8 +260,3 @@ img{
 
 
 
-
-
-
-
->>>>>>> main

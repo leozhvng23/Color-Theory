@@ -178,24 +178,24 @@ def display_learn():
     return render_template('learn.html')  
 
 # template for learn
-@app.route('/learn/primary')
-def display_learn_primary():
-    global user
-    global answers
-    global media
-    return render_template('learn_primary.html', colors = colors, media = media)
+# @app.route('/learn/primary')
+# def display_learn_primary():
+#     global user
+#     global answers
+#     global media
+#     return render_template('learn_primary.html', colors = colors, media = media)
 
-@app.route('/quiz')
-def display_quiz():
-    return render_template('quiz.html')
+# @app.route('/quiz')
+# def display_quiz():
+#     return render_template('quiz.html')
 
-# template for routes
-@app.route('/quiz/sec_1')
-def display_quiz_1():
-    global user
-    global answers
-    global media
-    return render_template('quiz_sec_1.html', user = user, answers = answers, media = media)
+# # template for routes
+# @app.route('/quiz/sec_1')
+# def display_quiz_1():
+#     global user
+#     global answers
+#     global media
+#     return render_template('quiz_sec_1.html', user = user, answers = answers, media = media)
 
 # quiz section2 cover
 # @id: the id of the img for question
@@ -205,7 +205,7 @@ def quiz_sec2_cover():
     global media
     global global_flow
     flow = global_flow["quiz/sec_2/cover"]
-    return render_template('quiz_sec2_cover.html', user = user, flow=flow )
+    return render_template('quiz_sec2_cover.html', user = user, flow=flow, content = text['quiz_sec_2'] )
 
 # quiz section2 question type1 -- choose picture type from complementary & analogus
 # @id: the id of the img for question
