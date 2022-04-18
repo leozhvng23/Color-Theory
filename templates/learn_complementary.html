@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block left_arrow %}
+    <div class="progress_btn" onclick="location.href='/learn/analogous'">
+        <i class="fa fa-caret-left fa-xl arrow" aria-hidden="true"></i>
+        <span class="btn_text">Analogous Colors</span>
+    </div>
+{% endblock %}
+
+{% block right_arrow %}
+    <div class="progress_btn" onclick="location.href='/learn/color_context'">
+        <span class="btn_text">Color in Context</span>
+        <i class="fa fa-caret-right fa-xl arrow" aria-hidden="true"></i>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row container">
+        <div class="col-lg-5 col-md-5 col-sm-12 learn_frame">
+            <div class="center_text">
+                <div class="learn_title">
+                    <span class="pg_title">{{text["title"]}}</span>
+                </div>
+                <div class="learn_text">
+                    <p>{{text["content"]}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-7 col-md-7 col-sm-12 learn_frame">
+            <div class="center_image">
+                <div class="color_wheel"><img src="{{media['URL']}}"></div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

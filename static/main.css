@@ -123,7 +123,6 @@ a:hover{
 
 #progress_btn{
     display: inline;
-    
 }
 
 /* shapes */
@@ -230,15 +229,11 @@ a:hover{
     margin-bottom: 20px;
 }
 
-  .arrow{
-      background-color: white;
-      border: 0px;
-      margin-top: 70%;
-  }
-  i{
-      height: 20px;
-      width: 10px;
-  }
+.arrow{
+    background-color: white;
+    border: 0px;
+}
+
 
   /* quiz end */
   .end_score{

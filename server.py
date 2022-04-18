@@ -1,9 +1,10 @@
+import json
+import random
 from collections import UserString
 from xml.dom.expatbuilder import parseString
-from flask import Flask
-from flask import render_template
-from flask import Response, request, jsonify
-import json, random
+
+from flask import Flask, Response, jsonify, render_template, request
+
 app = Flask(__name__)
 
 # user's answers to quiz questions
@@ -33,6 +34,15 @@ media = {
     },
     "primary_colors":{
         "URL":"https://media.istockphoto.com/vectors/primary-colors-of-red-yellow-blue-and-mixing-color-on-white-vector-id1058733546?b=1&k=20&m=1058733546&s=170667a&w=0&h=HKoqxfQgvLRbM2GLzGSLPU_8YXQ0LGbRMyvuQjuNxuI="
+    },
+    "analogous_colors":{
+        "URL":"https://upload.wikimedia.org/wikiversity/en/c/cf/Analogous_Color.gif"
+    },
+    "complementary_colors":{
+        "URL":"https://www.color-meanings.com/wp-content/uploads/complementary-color-scheme-wheel-1024x861.png"
+    }, 
+    "color_theory_in_context":{
+        "URL":"https://cdn.britannica.com/78/43678-050-F4DC8D93/Starry-Night-canvas-Vincent-van-Gogh-New-1889.jpg"
     },
     "color_context_1":{
         "id":"1",
@@ -183,6 +193,17 @@ def display_learn():
 def display_learnprimary():
     return render_template('learn_primary.html', media = media["primary_colors"], text= text["primary_colors"])
 
+@app.route('/learn/analogous')
+def display_learnanalogous():
+    return render_template('learn_analogous.html', media = media["analogous_colors"], text=text["analogous_colors"])
+
+@app.route('/learn/complementary')
+def display_learncomplementary():
+    return render_template('learn_complementary.html', media = media["complementary_colors"], text=text["complementary_colors"])
+
+@app.route('/learn/color_context')
+def display_learncolorcontext():
+    return render_template('learn_color_context.html', media = media["color_theory_in_context"], text=text["color_theory_in_context"])
 
 # template for routes
 @app.route('/quiz/sec_1')
