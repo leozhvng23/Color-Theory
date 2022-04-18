@@ -1,12 +1,16 @@
 {% extends "layout.html" %}
+{% block header %}
 <script>
     let user = {{user|tojson}}
     let question = {{question|tojson}}
+    let flow = {{flow|tojson}}
 </script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'general.js') }}"></script>
+{% endblock %}
 {% block left_arrow %}
-<div class="left_arrow">
-    Previous <i class="fa-solid fa-caret-left"></i>
-</div>
+<button class="arrow left_arrow" id = "previous">
+    Previous <i class="fa-solid fa-caret-left" ></i>
+</button>
 
 {% endblock %}
 {% block content %}
@@ -41,9 +45,9 @@
 {% endblock %}
 
 {% block right_arrow %}
-<div class="right_arrow">
+<button class="arrow right_arrow" id = "next">
     Next <i class="fa-solid fa-caret-right"></i>
-</div>
+</button>
 
 {% endblock %}
 
