@@ -112,10 +112,36 @@ img{
       height: 40px;
       border-radius: 20px;
   }
+
+  .btn:hover{
+      border: 1px solid #4295f5;
+  }
+
+  .btn:active{
+    background-color:  #4295f5;
+}
+.btn:focus{
+    background-color:  #4295f5;
+}
   .sec2_q1{
     max-width: 50%;
 }
   .choice{
       margin: 15px;
       text-align: center;
+  }
+
+  .arrow{
+      background-color: white;
+      border: 0px;
+      margin-top: 70%;
+  }
+  i{
+      height: 20px;
+      width: 10px;
+  }
+
+  /* quiz end */
+  .end_score{
+      margin-top: 100px;
   }

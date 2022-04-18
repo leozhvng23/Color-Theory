@@ -13,7 +13,7 @@ user = {
     "answer_2":[],
     "answer_3": ["#fffff"],
     "answer_4": "complimentary",
-    "answer_5": "",
+    "answer_5": "analogus",
     "answer_6": "",
 }
 
@@ -23,7 +23,7 @@ answers = {
     "answer_2":[],
     "answer_3": ["#fffff"],
     "answer_4": "complimentary",
-    "answer_5": "",
+    "answer_5": "analogus",
     "answer_6": "",
 }
 
@@ -49,18 +49,18 @@ media = {
         "id":"3",
         "url":"https://media.cntraveler.com/photos/54888f18860c74c1162c813d/16:9/w_2560,c_limit/frank-lloyd-wright-house-spring-green-wisconsin.jpg",
         "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
-        "type":"analogus"
+        "type":"comlementary"
     },
     "color_context_4":{
         "id":"4",
-        "url":"https://media.cntraveler.com/photos/54888f18860c74c1162c813d/16:9/w_2560,c_limit/frank-lloyd-wright-house-spring-green-wisconsin.jpg",
-        "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
-        "type":"analogus"
+        "url":"https://media.newyorker.com/photos/5ed06a238ceb0acbb5640565/1:1/w_3274,h_3274,c_limit/Nighthawks_by_Edward_Hopper_1942.jpg",
+        "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
+        "type":"comlementary"
     },
     "color_context_5":{
         "id":"5",
-        "url":"https://media.cntraveler.com/photos/54888f18860c74c1162c813d/16:9/w_2560,c_limit/frank-lloyd-wright-house-spring-green-wisconsin.jpg",
-        "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
+        "url":"https://media.newyorker.com/photos/5ed06a238ceb0acbb5640565/1:1/w_3274,h_3274,c_limit/Nighthawks_by_Edward_Hopper_1942.jpg",
+        "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
         "type":"analogus"
     }
 }
@@ -74,13 +74,16 @@ colors = {
 }
 global_flow ={
     "quiz/sec_2/cover":{
+        "cur":"quiz/sec_2/cover",
         "next":"quiz/sec_2/q1/1"
     },
     "quiz/sec_2/q1/1":{
+        "cur":"quiz/sec_2/q1/1",
         "previous":"quiz/sec_2/cover",
         "next":"quiz/sec_2/q1/2"
     },
     "quiz/sec_2/q1/2":{
+        "cur":"quiz/sec_2/q1/1",
         "previous":"quiz/sec_2/q1/1",
         "next":"quiz/sec_2/q2/3"
     },
