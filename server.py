@@ -125,10 +125,18 @@ text = {
 colors = {
     # refer to the image in Google doc
     # all hex codes from primary, secondary, and tertiary colors are in there
-    "primary": ["","",""], # red, yellow, blue
-    "secondary": ["","",""], # 
-    "tertiary": ["","","","","",""]
+    "primary_colors": ["#FF0000","#0000FF","#FFFF00"], # red, yellow, blue
+    "secondary_colors": ["#FF0000","#0000FF","#FFFF00"], # 
+    "tertiary_colors": ["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"]
 }
+
+questions = {
+    "0" : {
+        "reference" : "#ff8100",
+        "choices" : ["#FF0000","#0000FF","#FFFF00"],
+    },
+}
+
 global_flow ={
     "quiz/sec_2/cover":{
         "next":"quiz/sec_2/q1/1"
@@ -235,5 +243,30 @@ def quiz_end():
     global global_flow
     flow = global_flow["quiz/end"]
     return render_template('quiz_end.html', user = user,flow=flow  )
+
+# template for learn
+@app.route('/learn/<section>')
+def display_learn_primary(section = None):
+    global user
+    global answers
+    global media
+    global colors
+    global text
+    return render_template('learn_primary.html', colors = colors, text = text, section = section)
+
+@app.route('/quiz')
+def display_quiz():
+    global questions
+    return render_template('quiz.html', colors = colors, questions = questions, text = text)
+
+# template for routes
+@app.route('/quiz/sec_1')
+def display_quiz_1():
+    global user
+    global answers
+    global colors
+    global media
+    return render_template('quiz_sec_1.html', colors = colors, text = text)
+
 if __name__ == '__main__':
    app.run(debug = True)
