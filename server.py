@@ -193,6 +193,14 @@ def display_learn():
 def display_learnprimary():
     return render_template('learn_primary.html', media = media["primary_colors"], text= text["primary_colors"])
 
+@app.route('/learn/secondary')
+def display_learnsecondary():
+    return render_template('learn_secondary.html', text= text["secondary_colors"])
+    
+@app.route('/learn/tertiary')
+def display_learntertiary():
+    return render_template('learn_tertiary.html', text= text["tertiary_colors"])
+
 @app.route('/learn/analogous')
 def display_learnanalogous():
     return render_template('learn_analogous.html', media = media["analogous_colors"], text=text["analogous_colors"])
