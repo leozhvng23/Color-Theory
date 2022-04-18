@@ -123,7 +123,6 @@ a:hover{
 
 #progress_btn{
     display: inline;
-    
 }
 
 /* shapes */
@@ -253,6 +252,7 @@ i{
 .choice{
     text-align: center;
 }
+
 
   /* quiz end */
   .end_score{
