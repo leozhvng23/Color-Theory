@@ -1,29 +1,35 @@
 {% extends "layout.html" %}
 
-{% block content %}
-<script type="text/javascript" src="{{ url_for('static', filename = 'learn_primary.js') }}"></script>
+{% block left_arrow %}
+    <div class="progress_btn" onclick="location.href='/learn'">
+        <i class="fa fa-caret-left fa-xl arrow" aria-hidden="true"></i>
+        <span class="btn_text">The Color Wheel</span>
+    </div>
+{% endblock %}
 
-<script>
-    let colors = {{colors|tojson}}
-    let section = {{section|tojson}}
-    let text = {{text|tojson}}
-</script>
-<!-- <div class = "container"> -->
-    <div class = "row">
-        <div class = "col-md-1 previous-button-container">
+{% block right_arrow %}
+    <div class="progress_btn" onclick="location.href='/learn/secondary'">
+        <span class="btn_text">Secondary Colors</span>
+        <i class="fa fa-caret-right fa-xl arrow" aria-hidden="true"></i>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="row container">
+        <div class="col-lg-5 col-md-5 col-sm-12 learn_frame">
+            <div class="center_text">
+                <div class="learn_title">
+                    <span class="pg_title">{{text["title"]}}</span>
+                </div>
+                <div class="learn_text">
+                    <p>{{text["content"]}}</p>
+                </div>
+            </div>
         </div>
-        <div class = "col-md-4 learn-text">
-            <div class = "learn-text-title"></div>
-            <div class = "learn-text-inside learn-text-content"></div>
-        </div>
-        <div class = "col-md-6 learn-colors">
-            <!-- <div class = "color-circle" id="blue-circle"></div>
-            <div class = "color-circle" id="red-circle"></div>
-            <div class = "color-circle" id="yellow-circle"></div> -->
-        </div>
-        <div class = "col-md-1 next-button-container">
+        <div class="col-lg-7 col-md-7 col-sm-12 learn_frame">
+            <div class="center_image">
+                <div class="color_wheel"><img src="{{media['URL']}}"></div>
+            </div>
         </div>
     </div>
-<!-- </div> -->
-
 {% endblock %}

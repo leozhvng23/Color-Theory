@@ -27,25 +27,45 @@
 
 <body>
     <div class="container">
-        <nav id="navbar">
+        <div class="row">
+            <nav id="navbar">
+                <a href="/"><span class="site_title_navbar">Color Theory</span></a>
+                <a href="/learn" class="navlink"><span class="menu_item">Learn</span></a>
+                <a href="/quiz" class="navlink"><span class="menu_item">Quiz</span></a>
+                </div> 
+            </nav>
+        </div>
+    </div>
 
-            </div>
-        </nav>
+    <div class="left_arrow">
+        {% block left_arrow %}
+        <!--
+        <div class="progress_btn" onclick="location.href='/'">
+            <i class="fa fa-caret-left fa-xl arrow" aria-hidden="true"></i>
+            <span class="btn_text">Back</span>
+        </div>
+        -->
+        {% endblock %}    
+    </div>
+
+    <div class="right_arrow">
+        {% block right_arrow %}
+        <!--
+        <div class="progress_btn">
+            <span class="btn_text">Next</span>
+            <i class="fa fa-caret-right fa-xl arrow" aria-hidden="true"></i>
+        </div>
+        -->
+        {% endblock %}
     </div>
     
-    <div class="row container">  
-        <div class="col-2">
-            {% block left_arrow %}
-            {% endblock %}
-        </div>
-        <div class="col-8">
-            {% block content %}
-            {% endblock %}
-        </div>
-        <div class="col-2">
-            {% block right_arrow %}
-            {% endblock %}
-        </div>
+    <div class="container">
+        <div class="row justify-content-center"> 
+            <div class="col-lg-8 col-md-9 col-sm-10">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div> 
     </div>
 
     <div class="row container">
