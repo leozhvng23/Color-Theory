@@ -28,10 +28,11 @@ answers = {
 }
 
 media = {
-    "img_1":{
-        "URL":"",
-        "colors":"", # list of hash codes
-        "type":"complimentary"
+    "color_wheel":{
+        "URL":"https://wallpapercave.com/wp/wp4423381.png",
+    },
+    "primary_colors":{
+        "URL":"https://media.istockphoto.com/vectors/primary-colors-of-red-yellow-blue-and-mixing-color-on-white-vector-id1058733546?b=1&k=20&m=1058733546&s=170667a&w=0&h=HKoqxfQgvLRbM2GLzGSLPU_8YXQ0LGbRMyvuQjuNxuI="
     },
     "color_context_1":{
         "id":"1",
@@ -164,15 +165,12 @@ def display_home():
 
 @app.route('/learn')
 def display_learn():
-    return render_template('learn.html')  
+    return render_template('learn.html', media = media["color_wheel"], text=text["intro_to_colorwheel"])  
 
 # template for learn
 @app.route('/learn/primary')
 def display_learn_primary():
-    global user
-    global answers
-    global media
-    return render_template('learn_primary.html', colors = colors, media = media)
+    return render_template('learn_primary.html', media = media["primary_colors"], text= text["primary_colors"])
 
 @app.route('/quiz')
 def display_quiz():
