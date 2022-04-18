@@ -3,7 +3,6 @@
 {% block header %}
 <script>
     let user = {{user|tojson}}
-    let question = {{question|tojson}}
     let flow = {{flow|tojson}}
 </script>
 <script type="text/javascript" src="{{ url_for('static', filename = 'general.js') }}"></script>
@@ -11,23 +10,20 @@
 
 
 
-{% block left_arrow %}
-<button class="arrow left_arrow" id = "previous">
-    Previous <i class="fa-solid fa-caret-left" ></i>
-</button>
-
-{% endblock %}
 {% block content %}
-
-
-<div class="paintings">
-    <img src={{question.url}} class="sec2_q1">
+<div class="row">
+    <div class="col-6">
+        <div class="quiz_section">Section 2:</div>
+        <div class="pg_title">Colors in Context</div>
+        <div>
+            <p>Here we ask you to identify the types of color harmony in the pictures shown. Select whether the main colors in the picture is analagous or complementary</p>
+            <p>Here is the color wheel for your reference.</p>
+        </div>
+    </div>
+    <div class="col-6">
+        <img src="https://imagesvc.meredithcorp.io/v3/mm/image?url=https%3A%2F%2Fstatic.onecms.io%2Fwp-content%2Fuploads%2Fsites%2F37%2F2020%2F10%2F19%2Fcolor-wheel-db62df1a.jpg">
+    </div>
 </div>
-<div class="choice">
-    <button class="btn">Comlementary</button>
-    <button class="btn">Analogus</button>
-</div>
-
 {% endblock %}
 
 {% block right_arrow %}
