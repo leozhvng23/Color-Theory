@@ -288,6 +288,10 @@ color: black;
     text-align: center;
 }
 
+.cover_image{
+    width: 100%; 
+    height: 80%;
+}
 
   /* quiz end */
   .end_score{
