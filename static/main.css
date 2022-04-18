@@ -82,7 +82,7 @@ a:hover{
 
 .pg_footnote{
     font-family: futura;
-    font-size: 23px;
+    font-size: 18px;
 }
 
 /* navbar */
@@ -119,6 +119,25 @@ a:hover{
     margin-top: 2px;
 }
 
+.footnote{
+    position: absolute;
+    bottom: 5%;
+    height: 20px;
+    width: 100%;
+}
+
+.left_footnote{
+    float: left;
+    margin-left: 100px;
+    display: inline-flex;
+}
+
+.right_footnote{
+    float: right;
+    margin-right: 100px;
+    display: inline-flex;
+}  
+
 /* for # IDs */
 
 #progress_btn{
@@ -126,6 +145,12 @@ a:hover{
 }
 
 /* shapes */
+
+.spaced{
+    margin-left:20px;
+    margin-right: 20px;
+}
+
 .color_circle {
     width: 50px;
     height: 50px;
@@ -133,6 +158,7 @@ a:hover{
     -moz-border-radius: 25px;
     border-radius: 25px;
     margin: 10px auto;
+
   }
 
   .mid_drag_circle {
@@ -141,12 +167,16 @@ a:hover{
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    background-color: lightgray;
+    background-color: #E9E9E9;
+    box-shadow: 3px 4px 7px #D6D6D6 inset;
     margin: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
+    font-style: italic;
+    color: #a1a1a1;
+    font-weight: bold;
   }
 
   /* quiz section 2 */
@@ -161,25 +191,30 @@ a:hover{
      
     border-radius: 5%;
   }
-  .btn{
+  .choice_btn{
       margin: 5px;
+      border: 0px;
       background-color: lightgray;
+      font-style: italic;
+      color: #a1a1a1;
       width: 150px;
       height: 40px;
       border-radius: 20px;
   }
 
-  .btn:hover{
-      border: 1px solid #4295f5;
-  }
+.choice_btn:hover{
+    border: 1px solid #4295f5;
+}
 
-  .btn:active{
-    background-color:  #4295f5;
+.choice_btn:active{
+background-color:  #4295f5;
+color: black;
 }
-.btn:focus{
+.choice_btn:focus{
     background-color:  #4295f5;
+    color: black;
 }
-  .sec2_q1{
+.sec2_q1{
     max-width: 50%;
 }
   .choice{
@@ -197,7 +232,23 @@ a:hover{
     margin-left: 90px;
 }
 
+/* color circles*/
+
+.color_circles{
+    width: 100%;
+    margin-top: 50px;
+    margin-top: 100px;
+    text-align: center;
+}
+
 /* frames */
+
+.circle_frame{
+    display: inline-flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
 
 .learn-frame{
     width: 100%;
@@ -217,7 +268,6 @@ a:hover{
 .center_image{
     position: relative;
     top: 50%; 
-    margin: auto;
 }
 
 .learn_text{
@@ -234,12 +284,22 @@ a:hover{
     border: 0px;
 }
 
+.choice{
+    text-align: center;
+}
+
 
   /* quiz end */
   .end_score{
       margin-top: 100px;
   }
 
+.center-image-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
 .center-image-right {
     display: flex;
     flex-direction: column;
@@ -336,3 +396,5 @@ a:hover{
     flex-direction: column;
     align-items: center;
 }
+
+
