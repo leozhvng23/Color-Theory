@@ -13,7 +13,7 @@ user = {
     "answer_2":[],
     "answer_3": ["#fffff"],
     "answer_4": "complimentary",
-    "answer_5": "",
+    "answer_5": "analogus",
     "answer_6": "",
 }
 
@@ -23,7 +23,7 @@ answers = {
     "answer_2":[],
     "answer_3": ["#fffff"],
     "answer_4": "complimentary",
-    "answer_5": "",
+    "answer_5": "analogus",
     "answer_6": "",
 }
 
@@ -50,18 +50,18 @@ media = {
         "id":"3",
         "url":"https://media.cntraveler.com/photos/54888f18860c74c1162c813d/16:9/w_2560,c_limit/frank-lloyd-wright-house-spring-green-wisconsin.jpg",
         "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
-        "type":"analogus"
+        "type":"comlementary"
     },
     "color_context_4":{
         "id":"4",
-        "url":"https://media.cntraveler.com/photos/54888f18860c74c1162c813d/16:9/w_2560,c_limit/frank-lloyd-wright-house-spring-green-wisconsin.jpg",
-        "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
-        "type":"analogus"
+        "url":"https://media.newyorker.com/photos/5ed06a238ceb0acbb5640565/1:1/w_3274,h_3274,c_limit/Nighthawks_by_Edward_Hopper_1942.jpg",
+        "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
+        "type":"comlementary"
     },
     "color_context_5":{
         "id":"5",
-        "url":"https://media.cntraveler.com/photos/54888f18860c74c1162c813d/16:9/w_2560,c_limit/frank-lloyd-wright-house-spring-green-wisconsin.jpg",
-        "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
+        "url":"https://media.newyorker.com/photos/5ed06a238ceb0acbb5640565/1:1/w_3274,h_3274,c_limit/Nighthawks_by_Edward_Hopper_1942.jpg",
+        "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
         "type":"analogus"
     }
 }
@@ -126,19 +126,30 @@ text = {
 colors = {
     # refer to the image in Google doc
     # all hex codes from primary, secondary, and tertiary colors are in there
-    "primary": ["","",""], # red, yellow, blue
-    "secondary": ["","",""], # 
-    "tertiary": ["","","","","",""]
+    "primary_colors": ["#FF0000","#0000FF","#FFFF00"], # red, yellow, blue
+    "secondary_colors": ["#FF0000","#0000FF","#FFFF00"], # 
+    "tertiary_colors": ["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"]
 }
+
+questions = {
+    "0" : {
+        "reference" : "#ff8100",
+        "choices" : ["#FF0000","#0000FF","#FFFF00"],
+    },
+}
+
 global_flow ={
     "quiz/sec_2/cover":{
+        "cur":"quiz/sec_2/cover",
         "next":"quiz/sec_2/q1/1"
     },
     "quiz/sec_2/q1/1":{
+        "cur":"quiz/sec_2/q1/1",
         "previous":"quiz/sec_2/cover",
         "next":"quiz/sec_2/q1/2"
     },
     "quiz/sec_2/q1/2":{
+        "cur":"quiz/sec_2/q1/1",
         "previous":"quiz/sec_2/q1/1",
         "next":"quiz/sec_2/q2/3"
     },
@@ -233,5 +244,30 @@ def quiz_end():
     global global_flow
     flow = global_flow["quiz/end"]
     return render_template('quiz_end.html', user = user,flow=flow  )
+
+# template for learn
+@app.route('/learn/<section>')
+def display_learn_primary(section = None):
+    global user
+    global answers
+    global media
+    global colors
+    global text
+    return render_template('learn_primary.html', colors = colors, text = text, section = section)
+
+@app.route('/quiz')
+def display_quiz():
+    global questions
+    return render_template('quiz.html', colors = colors, questions = questions, text = text)
+
+# template for routes
+@app.route('/quiz/sec_1')
+def display_quiz_1():
+    global user
+    global answers
+    global colors
+    global media
+    return render_template('quiz_sec_1.html', colors = colors, text = text)
+
 if __name__ == '__main__':
    app.run(debug = True)

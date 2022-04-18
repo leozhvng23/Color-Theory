@@ -169,6 +169,17 @@ a:hover{
       height: 40px;
       border-radius: 20px;
   }
+
+  .btn:hover{
+      border: 1px solid #4295f5;
+  }
+
+  .btn:active{
+    background-color:  #4295f5;
+}
+.btn:focus{
+    background-color:  #4295f5;
+}
   .sec2_q1{
     max-width: 50%;
 }
@@ -176,6 +187,7 @@ a:hover{
       margin: 15px;
       text-align: center;
   }
+
 
 /* images */
 
@@ -216,4 +228,120 @@ a:hover{
 
 .learn_title{
     margin-bottom: 20px;
+}
+
+  .arrow{
+      background-color: white;
+      border: 0px;
+      margin-top: 70%;
+  }
+  i{
+      height: 20px;
+      width: 10px;
+  }
+
+  /* quiz end */
+  .end_score{
+      margin-top: 100px;
+  }
+
+.color-choices {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.color-circle {
+    width: 90px;
+    height: 90px;
+    -webkit-border-radius: 45px;
+    -moz-border-radius: 45px;
+    border-radius: 45px;
+    /* width: 80px;
+    height: 80px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px; */
+}
+.palette {
+    display: flex;
+    justify-content: center;
+}
+.palette-circle {
+    background-color: #E9E9E9;
+    box-shadow: 3px 4px 7px #D6D6D6 inset;
+    display: inline-block;
+}
+.main-palette-circle {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.palette-circle-big {
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 150px;
+    -moz-border-radius: 150px;
+    border-radius: 150px;
+}
+.palette-circle-med {
+    width: 100px;
+    height: 100px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    /* display: inline-block; */
+}
+.palette-circle-small {
+    /* width: 80px;
+    height: 80px;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    border-radius: 40px; */
+    width: 40px;
+    height: 40px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 20px;
+    /* display: inline-block; */
+}
+.palette-reference {
+    margin-top: 30px;
+}
+.color-examples {
+    display: flex;
+    justify-content: space-around;
+}
+.learn-colors-row {
+    margin-bottom: 10px;
+}
+.learn-color-name {
+    font-weight: bold;
+    font-size: small;
+    font-style: italic;
+    color: #a1a1a1;;
+}
+.learn-text {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    margin-top: 80px;
+}
+.learn-text-inside {
+    margin-left: 30px;
+    margin-right: 10px;
+}
+.learn-text-title {
+    font-size: large;
+    font-weight: bold;
+    color: rgb(97, 97, 97);
+}
+.learn-text-content {
+    color: #676767;
+}
+.quiz-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
