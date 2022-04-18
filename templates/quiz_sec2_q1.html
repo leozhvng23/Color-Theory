@@ -12,10 +12,10 @@
 
 
 {% block left_arrow %}
-<button class="arrow left_arrow" id = "previous">
-    Previous <i class="fa-solid fa-caret-left" ></i>
-</button>
-
+<div class="progress_btn" id = "previous">
+    <i class="fa fa-caret-left fa-xl arrow" aria-hidden="true"></i>
+    <span class="btn_text">Previous</span>
+</div>
 {% endblock %}
 {% block content %}
 
@@ -31,10 +31,10 @@
 {% endblock %}
 
 {% block right_arrow %}
-<button class="arrow right_arrow" id = "next">
-    Next <i class="fa-solid fa-caret-right"></i>
-</button>
-
+<div class="progress_btn" id="next">
+    <span class="btn_text">Next</span>
+    <i class="fa fa-caret-right fa-xl arrow" aria-hidden="true"></i>
+</div>
 {% endblock %}
 
 {% block footnote %}

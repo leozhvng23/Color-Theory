@@ -179,7 +179,6 @@ def display_learn():
     return render_template('learn.html', media = media["color_wheel"], text=text["intro_to_colorwheel"])  
 
 # template for learn
-<<<<<<< HEAD
 # @app.route('/learn/primary')
 # def display_learn_primary():
 #     global user
@@ -190,12 +189,12 @@ def display_learn():
 # @app.route('/quiz')
 # def display_quiz():
 #     return render_template('quiz.html')
-=======
+
 @app.route('/learn/primary')
 def display_learnprimary():
     return render_template('learn_primary.html', media = media["primary_colors"], text= text["primary_colors"])
 
->>>>>>> main
+
 
 # # template for routes
 # @app.route('/quiz/sec_1')

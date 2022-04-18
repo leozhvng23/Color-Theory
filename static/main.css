@@ -193,28 +193,6 @@ color: black;
 .sec2_q1{
     max-width: 50%;
 }
-<<<<<<< HEAD
-.choice{
-    margin: 15px;
-    text-align: center;
-}
-
-.arrow{
-    background-color: white;
-    border: 0px;
-    margin-top: 70%;
-}
-i{
-    height: 20px;
-    width: 10px;
-}
-
-/* quiz end */
-.end_score{
-    margin-top: 100px;
-}
-
-=======
   .choice{
       margin: 15px;
       text-align: center;
@@ -262,21 +240,24 @@ i{
     margin-bottom: 20px;
 }
 
-  .arrow{
-      background-color: white;
-      border: 0px;
-      margin-top: 70%;
-  }
-  i{
-      height: 20px;
-      width: 10px;
-  }
+.arrow{
+    background-color: white;
+    border: 0px;
+    margin-top: 70%;
+}
+i{
+    height: 20px;
+    width: 10px;
+}
+
+.choice{
+    text-align: center;
+}
 
   /* quiz end */
   .end_score{
       margin-top: 100px;
   }
->>>>>>> main
 
 .color-choices {
     display: flex;
