@@ -145,6 +145,12 @@ a:hover{
 }
 
 /* shapes */
+
+.spaced{
+    margin-left:20px;
+    margin-right: 20px;
+}
+
 .color_circle {
     width: 50px;
     height: 50px;
@@ -216,7 +222,23 @@ a:hover{
     margin-left: 90px;
 }
 
+/* color circles*/
+
+.color_circles{
+    width: 100%;
+    margin-top: 50px;
+    margin-top: 100px;
+    text-align: center;
+}
+
 /* frames */
+
+.circle_frame{
+    display: inline-flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: auto;
+}
 
 .learn-frame{
     width: 100%;
@@ -236,7 +258,6 @@ a:hover{
 .center_image{
     position: relative;
     top: 50%; 
-    margin: auto;
 }
 
 .learn_text{

@@ -44,6 +44,11 @@ media = {
     "color_theory_in_context":{
         "URL":"https://cdn.britannica.com/78/43678-050-F4DC8D93/Starry-Night-canvas-Vincent-van-Gogh-New-1889.jpg"
     },
+
+    "color_theory_in_architecture":{
+        "URL":"http://cdn.home-designing.com/wp-content/uploads/2018/07/Schro%CC%88der-house.jpg"
+    },
+
     "color_context_1":{
         "id":"1",
         "url":"https://2u6x5g2hw94422e8f15fpzjq-wpengine.netdna-ssl.com/wp-content/uploads/2015/07/A-Bit-of-Summer-16x20-600px.jpeg",
@@ -204,6 +209,10 @@ def display_learncomplementary():
 @app.route('/learn/color_context')
 def display_learncolorcontext():
     return render_template('learn_color_context.html', media = media["color_theory_in_context"], text=text["color_theory_in_context"])
+
+@app.route('/learn/color_architecture')
+def display_learncolorarchitecture():
+    return render_template('learn_color_architecture.html', media = media["color_theory_in_architecture"], text=text["color_theory_in_architecture"], colors=colors["primary_colors"]) 
 
 # template for routes
 @app.route('/quiz/sec_1')
