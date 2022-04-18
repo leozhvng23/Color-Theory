@@ -65,13 +65,78 @@ media = {
     }
 }
 
+text = {
+    "intro_to_colorwheel":{
+        "title":"The Color Wheel",
+        "content":"The color wheel, sometimes called a color circle, is a circular arrangement of colors organized by their chromatic relationship to one another. The primary colors are equidistant from each other on the wheel, and secondary and tertiary colors sit between them. It’s used in art and design to choose colors and color schemes based on their relationships to one another."
+    },
+    "primary_colors":{
+        "title":"Primary Colors",
+        "content":"Red, yellow and blue.\
+            In traditional color theory (used in paint and pigments), primary colors are the 3 pigment colors that cannot be mixed or formed by any combination of other colors. All other colors are derived from these 3 hues. "
+    },
+    "secondary_colors":{
+        "title":"Secondary Colors",
+        "content":"Green, orange and purple\
+                    These are the colors formed by mixing the primary colors.\
+                    Try to creating the secondary colors yourself! Drag any two primary colors into the mixing area to create a secondary color."
+    },
+    "tertiary_colors":{
+        "title":"Tertiary Colors",
+        "content":"Yellow-orange, red-orange, red-purple, blue-purple, blue-green & yellow-green\
+                    These are the colors formed by mixing a primary and a secondary color. That's why the hue is a two word name, such as blue-green, red-violet, and yellow-orange."
+    },
+    "analogous_colors":{
+        "title":"Analogous Colors",
+        "content": "Analogous colors are any three colors which are side by side on a 12-part color wheel, such as yellow-green, yellow, and yellow-orange. Usually one of the three colors predominates."
+    },
+    "complementary_colors":{
+        "title":"Complementary Colors",
+        "content":"Complementary colors are any two colors which are directly opposite each other, such as red and green and red-purple and yellow-green. In the illustration above, there are several variations of yellow-green in the leaves and several variations of red-purple in the orchid. These opposing colors create maximum contrast and maximum stability."
+    },
+    "color_theory_in_context":{
+        "title":"Color Theory in Context",
+        "content":"In visual experiences, harmony is something that is pleasing to the eye. It engages the viewer and it creates an inner sense of order, a balance in the visual experience. Color harmony delivers visual interest and a sense of order. We see practices of harmonizing color in our every day lives such as architecture, interior design, art, and film."
+    },
+    "color_theory_in_architecture":{
+        "title":"Color Theory in Architecture",
+        "content":"The Rietveld Schröder House is an architectural master piece featuring fluid transitions between interior and exterior, clean horizontal and vertical lines and the use of all primary colors, alongside white, grey and black."
+    },
+    "color_theory_in_film":{
+        "title":"Color Theory in Film",
+        "content":"Barry Jenkin's “Moonlight” is praised for using two sets of complimentary colors to contrast different characters, moods, and emotions."
+    },
+    "quiz_sec_1":{
+        "section":"1",
+        "title":"Primary Secondary, and Tertiary Colors",
+        "content":"In this section, we will ask you to create a color using only the primary colors.\
+                    To create a new color, drag any two colors into the mixing area and a new color will appear in the center. You can repeat this task a number of times until you are satisfied with your answer. Drop your final color in answer box to continue.\
+                    Note: You will be penalized if you create any unnecessary colors in the process!\
+                    You can practice using the mixing tools here before you start the quiz."
+    },
+    "quiz_sec_2":{
+        "section":"2",
+        "title":"Colors in Context",
+        "content":"Here we ask you to identify the types of color harmony in the pictures shown. Select whether the main colors in the picture is analogous or complementary.\
+                    Here is the color wheel for your reference. "
+    }
+}
+
 colors = {
     # refer to the image in Google doc
     # all hex codes from primary, secondary, and tertiary colors are in there
-    "primary": ["","",""], # red, yellow, blue
-    "secondary": ["","",""], # 
-    "tertiary": ["","","","","",""]
+    "primary_colors": ["#FF0000","#0000FF","#FFFF00"], # red, yellow, blue
+    "secondary_colors": ["#FF0000","#0000FF","#FFFF00"], # 
+    "tertiary_colors": ["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"]
 }
+
+questions = {
+    "0" : {
+        "reference" : "#ff8100",
+        "choices" : ["#FF0000","#0000FF","#FFFF00"],
+    },
+}
+
 global_flow ={
     "quiz/sec_2/cover":{
         "cur":"quiz/sec_2/cover",
@@ -181,5 +246,30 @@ def quiz_end():
     global global_flow
     flow = global_flow["quiz/end"]
     return render_template('quiz_end.html', user = user,flow=flow  )
+
+# template for learn
+@app.route('/learn/<section>')
+def display_learn_primary(section = None):
+    global user
+    global answers
+    global media
+    global colors
+    global text
+    return render_template('learn_primary.html', colors = colors, text = text, section = section)
+
+@app.route('/quiz')
+def display_quiz():
+    global questions
+    return render_template('quiz.html', colors = colors, questions = questions, text = text)
+
+# template for routes
+@app.route('/quiz/sec_1')
+def display_quiz_1():
+    global user
+    global answers
+    global colors
+    global media
+    return render_template('quiz_sec_1.html', colors = colors, text = text)
+
 if __name__ == '__main__':
    app.run(debug = True)
