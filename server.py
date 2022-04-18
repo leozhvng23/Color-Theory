@@ -180,12 +180,9 @@ def display_learn():
 
 # template for learn
 @app.route('/learn/primary')
-def display_learn_primary():
+def display_learnprimary():
     return render_template('learn_primary.html', media = media["primary_colors"], text= text["primary_colors"])
 
-@app.route('/quiz')
-def display_quiz():
-    return render_template('quiz.html')
 
 # template for routes
 @app.route('/quiz/sec_1')
@@ -260,14 +257,6 @@ def display_quiz():
     global questions
     return render_template('quiz.html', colors = colors, questions = questions, text = text)
 
-# template for routes
-@app.route('/quiz/sec_1')
-def display_quiz_1():
-    global user
-    global answers
-    global colors
-    global media
-    return render_template('quiz_sec_1.html', colors = colors, text = text)
 
 if __name__ == '__main__':
    app.run(debug = True)
