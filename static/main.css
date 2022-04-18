@@ -298,22 +298,24 @@ color: black;
       margin-top: 100px;
   }
 
-.color-choices {
+.center-image-right {
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+.center-image-right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
     justify-content: space-between;
 }
 .color-circle {
-    width: 90px;
-    height: 90px;
-    -webkit-border-radius: 45px;
-    -moz-border-radius: 45px;
-    border-radius: 45px;
-    /* width: 80px;
-    height: 80px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    border-radius: 40px; */
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
 }
 .palette {
     display: flex;
@@ -331,11 +333,11 @@ color: black;
     align-items: center;
 }
 .palette-circle-big {
-    width: 300px;
-    height: 300px;
-    -webkit-border-radius: 150px;
-    -moz-border-radius: 150px;
-    border-radius: 150px;
+    width: 200px;
+    height: 200px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
 }
 .palette-circle-med {
     width: 100px;
