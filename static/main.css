@@ -332,6 +332,13 @@ color: black;
     justify-content: center;
     align-items: center;
 }
+.palette-circle-bigger {
+    width: 250px;
+    height: 250px;
+    -webkit-border-radius: 125px;
+    -moz-border-radius: 125px;
+    border-radius: 125px;
+}
 .palette-circle-big {
     width: 200px;
     height: 200px;
@@ -399,6 +406,12 @@ color: black;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.center-palette {
+    margin-left: 30px;
+    position: relative;
+    top: 20%;
 }
 
 

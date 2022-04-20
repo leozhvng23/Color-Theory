@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block header %}
+<script>
+    let user = {{user|tojson}}
+    let flow = {{flow|tojson}}
+    let text = {{text|tojson}}
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'general.js') }}"></script>
+<script type="text/javascript" src="{{ url_for('static', filename = 'quiz_sec1_cover.js') }}"></script>
+{% endblock %}
+
+
+
+{% block content %}
+<div class="row">
+    <div class="col-6" id="text">
+        <div class="quiz_section" id = "section"></div>
+        <div class="pg_title" id = "title"></div>
+        <div id="content">
+        </div>
+    </div>
+    <div class="col-6">
+        <div class="row center-palette">
+            <div class = "col-lg-7 col-md-7 col-sm-12 center-image-left">
+            </div>
+            <div class = "col-lg-5 col-md-5 col-sm-12 center-image-right">
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block right_arrow %}
+<div class="progress_btn" id="next">
+    <span class="btn_text">Next</span>
+    <i class="fa fa-caret-right fa-xl arrow" aria-hidden="true"></i>
+</div>
+
+
+{% endblock %}

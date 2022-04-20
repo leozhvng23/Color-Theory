@@ -154,6 +154,11 @@ questions = {
 }
 
 global_flow ={
+    "quiz/sec_1/cover":{
+        "cur":"quiz/sec_1/cover",
+        # "next":"quiz/sec_1/q1/1"
+        "next":"quiz/sec_2/cover",
+    },
     "quiz/sec_2/cover":{
         "cur":"quiz/sec_2/cover",
         "next":"quiz/sec_2/q1/1"
@@ -233,13 +238,13 @@ def display_learncolorcontext():
 def display_learncolorarchitecture():
     return render_template('learn_color_architecture.html', media = media["color_theory_in_architecture"], text=text["color_theory_in_architecture"], colors=colors["primary_colors"]) 
 
-# template for routes
-@app.route('/quiz/sec_1')
-def display_quiz_1():
+@app.route('/quiz/sec_1/cover')
+def quiz_sec1_cover():
     global user
-    global answers
-    global media
-    return render_template('quiz_sec_1.html', user = user, answers = answers, media = media)
+    global text
+    global global_flow
+    flow = global_flow["quiz/sec_1/cover"]
+    return render_template('quiz_sec1_cover.html', user = user, text = text["quiz_sec_1"], flow = flow)
 
 # # template for routes
 # @app.route('/quiz/sec_1')
