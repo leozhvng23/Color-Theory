@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="979" height="801" viewBox="0 0 979 801">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: rgba(237,157,71,0.8);
+      }
+
+      .cls-2 {
+        fill: rgba(158,191,157,0.8);
+      }
+
+      .cls-3 {
+        fill: rgba(214,108,92,0.8);
+      }
+
+      .cls-4 {
+        fill: rgba(255,145,12,0.8);
+      }
+    </style>
+  </defs>
+  <g id="Background" transform="translate(-412 -148)">
+    <circle id="Ellipse_5" data-name="Ellipse 5" class="cls-1" cx="231.5" cy="231.5" r="231.5" transform="translate(412 277)"/>
+    <circle id="Ellipse_7" data-name="Ellipse 7" class="cls-2" cx="310" cy="310" r="310" transform="translate(771 148)"/>
+    <circle id="Ellipse_6" data-name="Ellipse 6" class="cls-3" cx="169" cy="169" r="169" transform="translate(675 611)"/>
+    <circle id="Ellipse_8" data-name="Ellipse 8" class="cls-4" cx="85" cy="85" r="85" transform="translate(996 706)"/>
+  </g>
+</svg>

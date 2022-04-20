@@ -7,15 +7,16 @@ from flask import Flask, Response, jsonify, render_template, request
 
 app = Flask(__name__)
 
-f = open('data.json')
-data = json.load(f)
+f = open("data.json")
+json_data = json.load(f)
+f.close()
 
-answers = data["answers"]
-media = data["media"]
-text = data["text"]
-colors = data["colors"]
-questions = data["questions"]
-global_flow = data["global_flow"]
+answers = json_data["answers"]
+media = json_data["media"]
+text = json_data["text"]
+colors = json_data["colors"]
+questions = json_data["questions"]
+global_flow = json_data["global_flow"]
 
 user = {
     "score":0,

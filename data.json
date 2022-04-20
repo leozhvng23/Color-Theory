@@ -10,7 +10,7 @@
 
     "media":{
         "color_wheel":{
-            "URL":"https://wallpapercave.com/wp/wp4423381.png",
+            "URL":"https://wallpapercave.com/wp/wp4423381.png"
         },
         "primary_colors":{
             "URL":"https://media.istockphoto.com/vectors/primary-colors-of-red-yellow-blue-and-mixing-color-on-white-vector-id1058733546?b=1&k=20&m=1058733546&s=170667a&w=0&h=HKoqxfQgvLRbM2GLzGSLPU_8YXQ0LGbRMyvuQjuNxuI="
@@ -119,11 +119,14 @@
     "questions":{
         "0" : {
             "reference" : "#ff8100",
-            "choices" : ["#FF0000","#0000FF","#FFFF00"],
+            "choices" : ["#FF0000","#0000FF","#FFFF00"]
         }
     },
 
     "global_flow":{
+        "learn":{
+            "forward_link":"/"
+        },
         "quiz/sec_1/cover":{
             "cur":"quiz/sec_1/cover",
             "next":"quiz/sec_2/cover"
