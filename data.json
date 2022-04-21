@@ -183,8 +183,10 @@
             "r_text":"Quiz"
         },
         "quiz/sec_1/cover":{
-            "cur":"quiz/sec_1/cover",
-            "next":"quiz/sec_2/cover"
+            "l_link":"/learn/color_film",
+            "l_text":"Colors in Film",
+            "r_link":"/quiz/sec_2/cover",
+            "r_text":"Q1.1"
         },
         "quiz/sec_2/cover":{
             "cur":"quiz/sec_2/cover",

@@ -32,9 +32,13 @@
 {% endblock %}
 
 {% block right_arrow %}
-<div class="progress_btn" id="next">
+<!-- <div class="progress_btn" id="next">
     <span class="btn_text">Next</span>
     <i class="fa fa-caret-right fa-xl arrow" aria-hidden="true"></i>
+</div> -->
+<div class="progress_btn" onclick="location.href='{{flow['r_link']}}'">
+    <div class="btn_text right"><span class="pg_progress">{{flow['r_text']}}</span></div>
+    <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
 </div>
 
 
