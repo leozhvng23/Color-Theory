@@ -383,17 +383,11 @@ color: black;
     /* display: inline-block; */
 }
 .palette-circle-small {
-    /* width: 80px;
-    height: 80px;
-    -webkit-border-radius: 40px;
-    -moz-border-radius: 40px;
-    border-radius: 40px; */
-    width: 40px;
-    height: 40px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    border-radius: 20px;
-    /* display: inline-block; */
+    width: 60px;
+    height: 60px;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    border-radius: 30px;
 }
 .palette-reference {
     margin-top: 30px;
@@ -448,4 +442,8 @@ color: black;
     max-width: 800px;
     min-width: 600px;
     display: inline-block;
+    vertical-align: middle;
+}
+.row-move-down {
+    margin-top: 30px;
 }
