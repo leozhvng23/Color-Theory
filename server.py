@@ -144,13 +144,13 @@ def quiz_static_template():
 @app.route('/quiz/static_interactive_template')
 def quiz_static_interactive_template():
     global user
-    return render_template('quiz_static_interactive.html', user=user, flow="/learn", media = media["color_context_5"], text=text["quiz_sec_2"], section=2, colors = colors, js_path= "quiz_sec2_part1")
+    return render_template('quiz_static_interactive.html', user=user, flow="/learn", media = media["color_context_5"], text=text["quiz_sec_2"], section=2, colors = colors, js_path= "quiz_sec2_part1.js")
 
 # template for page with no text and just interactive module
 @app.route('/quiz/interactive_template')
 def quiz_interactive_template():
     global user
-    return render_template('quiz_interactive.html', user=user, flow="/learn", media = media["color_wheel"], section=1, js_path= "quiz_sec1")
+    return render_template('quiz_interactive.html', user=user, flow="/learn", media = media["color_wheel"], section=1, js_path= "quiz_sec1.js")
 
 
 if __name__ == '__main__':
