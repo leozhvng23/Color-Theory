@@ -30,7 +30,16 @@
 
             <!--right side image-->
             <div class="learn_div image">
-                <div class="learn_image"><img src="{{url_for('static', filename='images/'+ media['URL'])}}"></div>
+                <div class="learn_image">
+                    <img src="{{url_for('static', filename='images/'+ media['URL'])}}">
+                </div>
+                <div class="color_circles">
+                    {% for color in colors %}
+                    <div class="circle_frame">
+                        <div class="palette-circle-med" style="background-color:{{color}}"></div>
+                    </div>
+                    {% endfor %}
+                </div>
             </div>
 
         </div>

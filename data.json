@@ -10,52 +10,56 @@
 
     "media":{
         "color_wheel":{
-            "URL":"https://wallpapercave.com/wp/wp4423381.png"
+            "URL":"color_wheel_12_sides.png"
         },
         "primary_colors":{
-            "URL":"https://media.istockphoto.com/vectors/primary-colors-of-red-yellow-blue-and-mixing-color-on-white-vector-id1058733546?b=1&k=20&m=1058733546&s=170667a&w=0&h=HKoqxfQgvLRbM2GLzGSLPU_8YXQ0LGbRMyvuQjuNxuI="
+            "URL":"RYB.jpeg"
+        },
+        "secondary_colors":{
+            "URL":""
         },
         "analogous_colors":{
-            "URL":"https://upload.wikimedia.org/wikiversity/en/c/cf/Analogous_Color.gif"
+            "URL":"#"
         },
         "complementary_colors":{
-            "URL":"https://www.color-meanings.com/wp-content/uploads/complementary-color-scheme-wheel-1024x861.png"
+            "URL":"#"
         }, 
         "color_theory_in_context":{
-            "URL":"https://cdn.britannica.com/78/43678-050-F4DC8D93/Starry-Night-canvas-Vincent-van-Gogh-New-1889.jpg"
+            "URL":"starry_night.jpeg"
         },
-    
         "color_theory_in_architecture":{
-            "URL":"http://cdn.home-designing.com/wp-content/uploads/2018/07/Schro%CC%88der-house.jpg"
+            "URL":"schroder_house.jpeg"
         },
-    
+        "color_theory_in_film":{
+            "URL":"moonlight.jpeg"
+        },    
         "color_context_1":{
             "id":"1",
-            "url":"https://2u6x5g2hw94422e8f15fpzjq-wpengine.netdna-ssl.com/wp-content/uploads/2015/07/A-Bit-of-Summer-16x20-600px.jpeg",
+            "url":"a_bit_of_summer.jpeg",
             "colors":[],
             "type":"comlementary"
         },
         "color_context_2":{
             "id":"2",
-            "url":"https://laurelberninteriors.com/wp-content/uploads/2014/05/kqsofia.blogspot.com_sofiakwang-1300x949(pp_w842_h614).jpg",
+            "url":"water_lilies.jpeg",
             "colors":[],
             "type":"analogus"
         },
         "color_context_3":{
             "id":"3",
-            "url":"https://media.cntraveler.com/photos/54888f18860c74c1162c813d/16:9/w_2560,c_limit/frank-lloyd-wright-house-spring-green-wisconsin.jpg",
+            "url":"color_interior.jpeg",
             "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
             "type":"comlementary"
         },
         "color_context_4":{
             "id":"4",
-            "url":"https://media.newyorker.com/photos/5ed06a238ceb0acbb5640565/1:1/w_3274,h_3274,c_limit/Nighthawks_by_Edward_Hopper_1942.jpg",
+            "url":"nighthawks.png",
             "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
             "type":"comlementary"
         },
         "color_context_5":{
             "id":"5",
-            "url":"https://media.newyorker.com/photos/5ed06a238ceb0acbb5640565/1:1/w_3274,h_3274,c_limit/Nighthawks_by_Edward_Hopper_1942.jpg",
+            "url":"nighthawks.png",
             "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
             "type":"analogus"
         } 
@@ -123,9 +127,60 @@
         }
     },
 
-    "global_flow":{
+    "flow":{
         "learn":{
-            "forward_link":"/"
+            "l_link":"/",
+            "l_text":"Back",
+            "r_link":"/learn/primary",
+            "r_text":"Primary Colors"
+        },
+        "learn/primary":{
+            "l_link":"/learn",
+            "l_text":"The Color Wheel",
+            "r_link":"/learn/secondary",
+            "r_text":"Secondary Colors"
+        },
+        "learn/secondary":{
+            "l_link":"/learn/primary",
+            "l_text":"Primary Colors",
+            "r_link":"/learn/tertiary",
+            "r_text":"Tertiary Colors"
+        },
+        "learn/tertiary":{
+            "l_link":"/learn/secondary",
+            "l_text":"Secondary Colors",
+            "r_link":"/learn/analogous",
+            "r_text":"Analogous Colors"
+        },
+        "learn/analogous":{
+            "l_link":"/learn/tertiary",
+            "l_text":"Tertiary Colors",
+            "r_link":"/learn/complementary",
+            "r_text":"Complementary Colors"
+        },
+        "learn/complementary":{
+            "l_link":"/learn/analogous",
+            "l_text":"Analogous Colors",
+            "r_link":"/learn/color_context",
+            "r_text":"Colors in Context"
+        },
+        "learn/color_context":{
+            "l_link":"/learn/complementary",
+            "l_text":"Complementary Colors",
+            "r_link":"/learn/color_architecture",
+            "r_text":"Colors in Architecture"
+        },
+        "learn/color_architecture":{
+            "l_link":"/learn/color_context",
+            "l_text":"Colors in Context",
+            "r_link":"/learn/color_film",
+            "r_text":"Colors in Film"
+        },
+        "learn/color_film":{
+            "l_link":"/learn/color_architecture",
+            "l_text":"Colors in Architecture",
+            "r_link":"/quiz/sec_1/cover",
+            "r_text":"Quiz"
         },
         "quiz/sec_1/cover":{
             "cur":"quiz/sec_1/cover",
@@ -161,5 +216,4 @@
             "previous":"quiz/sec_2/q3/5"
         }
     }
-    
 }

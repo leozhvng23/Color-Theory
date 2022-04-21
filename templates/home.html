@@ -1,5 +1,12 @@
 {% extends "layout.html" %}
 
+{% block right_arrow %}
+    <div class="progress_btn" onclick="location.href='/learn'">
+        <div class="btn_text right"><span class="pg_progress">Start</span></div>
+        <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
+    </div>
+{% endblock %}
+
 {% block content %}
 
 <div class="row justify-content-center">
@@ -13,8 +20,4 @@
     </div>        
 </div>
 
-{% endblock %}
-
-{% block footnote %}
-        
 {% endblock %}

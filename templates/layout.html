@@ -41,8 +41,8 @@
         {% block left_arrow %}
         <!--
         <div class="progress_btn" onclick="location.href='/'">
-            <i class="fa fa-caret-left fa-xl arrow" aria-hidden="true"></i>
-            <span class="btn_text">Back</span>
+            <div class="arrow"><i class="fa fa-caret-left fa-xl" aria-hidden="true"></i></div>
+            <div class="btn_text left"><span class="pg_progress">Home</span></div>
         </div>
         -->
         {% endblock %}    
@@ -51,21 +51,17 @@
     <div class="right_arrow">
         {% block right_arrow %}
         <!--
-        <div class="progress_btn">
-            <span class="btn_text">Next</span>
-            <i class="fa fa-caret-right fa-xl arrow" aria-hidden="true"></i>
-        </div>
+        <div class="progress_btn" onclick="location.href='/learn'">
+            <div class="btn_text right"><span class="pg_progress">Start</span></div>
+            <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
+        </div> 
         -->
         {% endblock %}
     </div>
     
     <div class="container">
-        <div class="row justify-content-center"> 
-            <div class="col-lg-8 col-md-9 col-sm-10">
-                {% block content %}
-                {% endblock %}
-            </div>
-        </div> 
+        {% block content %}
+        {% endblock %}
     </div>
 
     <div class="footnote">

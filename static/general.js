@@ -1,3 +1,5 @@
+
+/*
 $(document).ready(function(){
     console.log("linked");
     $("#previous").click(function (e) { 
@@ -9,3 +11,4 @@ $(document).ready(function(){
         
     });
 })
+*/

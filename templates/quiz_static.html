@@ -1,25 +1,24 @@
 {% extends "layout.html" %}
 
-{% block left_arrow %}
-    <div class="progress_btn" onclick="location.href='{{flow['l_link']}}'">
-        <div class="arrow"><i class="fa fa-caret-left fa-xl" aria-hidden="true"></i></div>
-        <div class="btn_text left"><span class="pg_progress">{{flow['l_text']}}</span></div>
-    </div>
+{% block header %}
+<script>
+    let user = {{user|tojson}}
+</script>
+<script type="text/javascript" src="{{ url_for('static', filename = js_path) }}"></script>
 {% endblock %}
 
 {% block right_arrow %}
-    <div class="progress_btn" onclick="location.href='{{flow['r_link']}}'">
-        <div class="btn_text right"><span class="pg_progress">{{flow['r_text']}}</span></div>
+    <div class="progress_btn" onclick="location.href='{{flow}}'">
+        <div class="btn_text right"><span class="pg_progress">Next</span></div>
         <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
     </div>
 {% endblock %}
 
 {% block content %}
-    
         <div class="learn_frame">
-            
             <!--left side text-->
             <div class="learn_div text">
+                <span class="pg_subtitle">Section {{section}}</span>
                 <div class="learn_title">
                     <span class="pg_title">{{text["title"]}}</span>
                 </div>
@@ -32,7 +31,11 @@
             <div class="learn_div image">
                 <div class="learn_image"><img src="{{url_for('static', filename='images/'+ media['URL'])}}"></div>
             </div>
-
         </div>
-
 {% endblock %}
+
+{% block footnote %} 
+    <div class="left_footnote"><span class="pg_footnote left_footnote">Section: {{section}}/3</span></div>
+    <div class="right_footnote"><span class="pg_footnote right_footnote">Score: {{user["score"]}}/10</span></div>
+{% endblock%}
+
