@@ -12,7 +12,7 @@ let learn_interactive_data = {
 let num_dropped = 0
 let dropped_color = []
 
-export function mixColor() {
+function mixColor() {
     $(".palette-circle-big").empty()
     $(".palette-circle-big").append("<div class = 'learn-color-name'>Drop two</div>")
     $(".palette-circle-big").append("<div class = 'learn-color-name'>colors here</div>")
@@ -27,7 +27,7 @@ export function mixColor() {
     else {
         result = mix_hexes(c1, c2)
         $.each(learn_interactive_data["secondary"]["example_list"], function(index, value) {
-            if(Object.keys(value)[0] == String(result)) {
+            if(Object.keys(value)[0].toLowerCase() == String(result).toLowerCase()) {
                 target += Object.values(value)[0]
             }
         })

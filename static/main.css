@@ -404,6 +404,7 @@ color: black;
     font-size: small;
     font-style: italic;
     color: #a1a1a1;;
+    text-align: center;
 }
 .learn-text {
     display: flex;
@@ -446,4 +447,7 @@ color: black;
 }
 .row-move-down {
     margin-top: 30px;
+}
+.small-font {
+    font-size: small;
 }
