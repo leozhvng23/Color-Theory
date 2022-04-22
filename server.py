@@ -15,7 +15,7 @@ answers = json_data["answers"]
 media = json_data["media"]
 text = json_data["text"]
 colors = json_data["colors"]
-questions = json_data["questions"]
+# quiz_1_questions = json_data["quiz_1_questions"]
 flow = json_data["flow"]
 
 user = {
@@ -72,7 +72,17 @@ def display_learncolorfilm():
 def quiz_sec1_cover():
     global user
     global text
-    return render_template('quiz_sec1_cover.html', user = user, text = text["quiz_sec_1"], flow = flow["quiz/sec_1/cover"])
+    return render_template('quiz_sec1_cover.html', user = user, text = text["quiz_sec_1"], flow = flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js")
+    # return render_template('quiz_static.html', user = user, text = text["quiz_sec_1"], flow = flow["quiz/sec_1/cover"])
+
+
+@app.route('/quiz/sec_1/q1/<id>')
+def quiz_sec1_q1(id = None):
+    global user
+    global answers
+    # return render_template('quiz_sec1_q1.html', id = id, user = user, flow = flow["quiz/sec_1/q1/1"])
+    return render_template('quiz_interactive.html', user = user, flow = flow["quiz/sec_1/q1/" + id], js_path = "quiz_sec1_q1.js", id = id)
+
 
 
 # quiz section2 cover

@@ -120,13 +120,6 @@
         "tertiary_colors": ["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"]
     },
 
-    "questions":{
-        "0" : {
-            "reference" : "#ff8100",
-            "choices" : ["#FF0000","#0000FF","#FFFF00"]
-        }
-    },
-
     "flow":{
         "learn":{
             "l_link":"/",
@@ -185,8 +178,20 @@
         "quiz/sec_1/cover":{
             "l_link":"/learn/color_film",
             "l_text":"Colors in Film",
-            "r_link":"/quiz/sec_2/cover",
+            "r_link":"/quiz/sec_1/q1/1",
             "r_text":"Q1.1"
+        },
+        "quiz/sec_1/q1/1":{
+            "l_link":"/quiz/sec_1/cover",
+            "l_text":"Section 1",
+            "r_link":"/quiz/sec_1/q1/2",
+            "r_text":"Q1.2"
+        },
+        "quiz/sec_1/q1/2":{
+            "l_link":"/quiz/sec_1/q1/1",
+            "l_text":"Q1.1",
+            "r_link":"/quiz/sec_2/cover",
+            "r_text":"Section 2"
         },
         "quiz/sec_2/cover":{
             "cur":"quiz/sec_2/cover",

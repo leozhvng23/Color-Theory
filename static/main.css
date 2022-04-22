@@ -451,3 +451,15 @@ color: black;
 .small-font {
     font-size: small;
 }
+.div-inline {
+    display: inline-block;
+}
+.verticalcenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.palette-reference {
+    margin-top: 30px;
+    margin-left: 30px;
+}

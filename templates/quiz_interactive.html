@@ -3,13 +3,18 @@
 {% block header %}
 <script>
     let user = {{user|tojson}}
+    let id = {{id|tojson}}
 </script>
-<script type="text/javascript" src="{{ url_for('static', filename=js_path) }}"></script>
+<script type="module" src="{{ url_for('static', filename=js_path) }}"></script>
 {% endblock %}
 
 {% block right_arrow %}
-    <div class="progress_btn" onclick="location.href='{{flow}}'">
+    <!-- <div class="progress_btn" onclick="location.href='{{flow}}'">
         <div class="btn_text right"><span class="pg_progress">Next</span></div>
+        <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
+    </div> -->
+    <div class="progress_btn" onclick="location.href='{{flow['r_link']}}'">
+        <div class="btn_text right"><span class="pg_progress">{{flow['r_text']}}</span></div>
         <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
     </div>
 {% endblock %}
@@ -21,7 +26,6 @@
         <div class="interactive_frame">
             <div class="row container" id="interactive">
                 <!--append to #interactive in jquery-->
-                append to #interactive in jquery
             </div>
         </div>
     </div>

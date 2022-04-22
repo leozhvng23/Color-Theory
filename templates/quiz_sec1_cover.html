@@ -11,24 +11,29 @@
 {% endblock %}
 
 
-
 {% block content %}
-<div class="row">
-    <div class="col-6" id="text">
-        <div class="quiz_section" id = "section"></div>
-        <div class="pg_title" id = "title"></div>
-        <div id="content">
-        </div>
-    </div>
-    <div class="col-6">
-        <div class="row center-palette">
-            <div class = "col-lg-7 col-md-7 col-sm-12 center-image-left">
+        <div class="learn_frame">
+            <!--left side text-->
+            <div class="learn_div text">
+                <span class="pg_subtitle">Section {{section}}</span>
+                <div class="learn_title">
+                    <span class="pg_title">{{text["title"]}}</span>
+                </div>
+                <div class="learn_text">
+                    <p>{{text["content"]}}</p>
+                </div>
             </div>
-            <div class = "col-lg-5 col-md-5 col-sm-12 center-image-right">
+
+            <!--right side image-->
+            <div class="learn_div">
+                <div class="row center-palette">
+                    <div class = "col-lg-7 col-md-7 col-sm-12 center-image-left">
+                    </div>
+                    <div class = "col-lg-5 col-md-5 col-sm-12 center-image-right">
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-</div>
 {% endblock %}
 
 {% block right_arrow %}
