@@ -9,13 +9,19 @@ $(document).ready(function(){
 
     let choice = $('<div>');
     choice.attr("class", "quiz-choice");
-    let choice_button_1 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","complimentary").attr("id","0");
+    let choice_button_1 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","complimentary");
     choice_button_1.html('Complimentary');
-    let choice_button_2 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","analagous").attr("id","1");
+    let choice_button_2 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","analagous");
     choice_button_2.html('Analagous');
     choice.append(choice_button_1);
     choice.append(choice_button_2);
     container.append(choice)
+
+    if (user[ans_section].length > 0) {
+        $(".quiz-choice-btn").filter(function(){
+            return $(this).attr('data-choice') == user[ans_section]
+        }).addClass('selected');
+    }
 
     
     $(".quiz-choice-btn").click(function (e) { 
@@ -23,7 +29,7 @@ $(document).ready(function(){
         let data = {};
         data['section'] = ans_section;
         data['answer'] = e.target.dataset.choice;
-        console.log(e);
+        console.log(data['answer'])
         $.ajax({
             type: "POST",
             url: "../../../update_ans",                
@@ -32,8 +38,7 @@ $(document).ready(function(){
             data : JSON.stringify(data),
             success: function(result){
                 $(".selected").removeClass('selected');
-                $("#"+e.target.id).addClass('selected');
-                console.log(result)
+                $(e.target).addClass('selected');
                 $('span.right_footnote').html("Score: "+result.data["score"]+"/10")
             },
             error: function(request, status, error){
