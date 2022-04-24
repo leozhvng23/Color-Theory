@@ -91,8 +91,9 @@ def quiz_sec1_q1(id = None):
 def quiz_sec2_cover():
     global user
     global media
-    global global_flow
-    return render_template('quiz_sec2_cover.html', user = user, flow=flow["quiz/sec_2/cover"], content = text['quiz_sec_2'] )
+    global flow
+    global text
+    return render_template('quiz_static.html', user=user, flow=flow['quiz/sec_2/cover'], media=media["color_wheel"], text=text["quiz_sec_2"], section=2)
 
 # quiz section2 question type1 -- choose picture type from complementary & analogus
 # @id: the id of the img for question
@@ -100,7 +101,11 @@ def quiz_sec2_cover():
 def quiz_sec2_q1(id):
     global user
     global media
-    return render_template('quiz_sec2_q1.html', user = user, question = media["color_context_"+str(id)], flow=flow["quiz/sec_2/q1/"+str(id)])
+    global flow
+    global media
+    return render_template('quiz_interactive.html', user=user, flow=flow["quiz/sec_2/q1/"+str(id)], media=media["color_context_"+str(id)], section=2, js_path="quiz_sec2_part1.js")
+
+
 
 
 # quiz section2 question type2 -- choose complementary colors
@@ -145,10 +150,12 @@ def quiz_end():
 #
 
 # template for static quiz page
-@app.route('/quiz/static_template')
-def quiz_static_template():
+
+
+@app.route('/quiz/static_template/<section>')
+def quiz_static_template(section):
     global user
-    return render_template('quiz_static.html', user=user, flow="/learn", media = media["color_wheel"], text=text["quiz_sec_2"], section=2)
+    return render_template('quiz_static.html', user=user, flow="/learn", media=media["color_wheel"], text=text["quiz_sec_"+section], section=section)
     
 # template for static(left) interactive(right) quiz page
 @app.route('/quiz/static_interactive_template')

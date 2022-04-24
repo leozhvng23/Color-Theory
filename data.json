@@ -194,18 +194,22 @@
             "r_text":"Section 2"
         },
         "quiz/sec_2/cover":{
-            "cur":"quiz/sec_2/cover",
-            "next":"quiz/sec_2/q1/1"
+            "l_link":"/quiz/sec_1/q1/2",
+            "l_text":"Q1.2",
+            "r_link":"/quiz/sec_2/q1/1",
+            "r_text":"Q1.1"
         },
         "quiz/sec_2/q1/1":{
-            "cur":"quiz/sec_2/q1/1",
-            "previous":"quiz/sec_2/cover",
-            "next":"quiz/sec_2/q1/2"
+            "l_link":"/quiz/sec_2/cover",
+            "l_text":"Section 2",
+            "r_link":"/quiz/sec_2/q1/2",
+            "r_text":"Q1.2"
         },
         "quiz/sec_2/q1/2":{
-            "cur":"quiz/sec_2/q1/1",
-            "previous":"quiz/sec_2/q1/1",
-            "next":"quiz/sec_2/q2/3"
+            "l_link":"quiz/sec_2/q1/1",
+            "l_text":"Q1.1",
+            "r_link":"/quiz/sec_2/q2/1",
+            "r_text":"Q2.1"
         },
         "quiz/sec_2/q2/3":{
             "previous":"quiz/sec_2/q1/2",
