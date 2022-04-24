@@ -22,8 +22,8 @@ user = {
     "score":0,
     "sec_1/q1/1": ["#fffff"],
     "sec_1/q1/2": ["#fffff"],
-    "sec_2/q1/1": "complimentary",
-    "sec_2/q1/2": "Analagous",
+    "sec_2/q1/1": "",
+    "sec_2/q1/2": "",
     "sec_2/q2/3": ["#fffff"],
     "sec_2/q2/4": ["#fffff"],
     "sec_2/q3/5": ["#fffff"]
@@ -43,9 +43,9 @@ scores = {
 def update_score(question, ans):
     user[question] = ans
     if answers[question] == ans:
-        scores['question'] = 1
+        scores[question] = 1
     else:
-        scores['question'] = 0
+        scores[question] = 0
     new_score = 0
     for i in scores:
         new_score += scores[i]
