@@ -20,13 +20,37 @@ flow = json_data["flow"]
 
 user = {
     "score":0,
-    "answer_1": "",
-    "answer_2":[],
-    "answer_3": ["#fffff"],
-    "answer_4": "complimentary",
-    "answer_5": "analogus",
-    "answer_6": "",
+    "sec_1/q1/1": ["#fffff"],
+    "sec_1/q1/2": ["#fffff"],
+    "sec_2/q1/1": "complimentary",
+    "sec_2/q1/2": "Analagous",
+    "sec_2/q2/3": ["#fffff"],
+    "sec_2/q2/4": ["#fffff"],
+    "sec_2/q3/5": ["#fffff"]
 }
+
+scores = {
+    "sec_1/q1/1": 0,
+    "sec_1/q1/2": 0,
+    "sec_2/q1/1": 0,
+    "sec_2/q1/2": 0,
+    "sec_2/q2/3": 0,
+    "sec_2/q2/4": 0,
+    "sec_2/q3/5": 0
+}
+
+
+def update_score(question, ans):
+    user[question] = ans
+    if answers[question] == ans:
+        scores['question'] = 1
+    else:
+        scores['question'] = 0
+    new_score = 0
+    for i in scores:
+        new_score += scores[i]
+    user["score"] = new_score
+
 
 @app.route('/')
 def display_home():
@@ -91,8 +115,9 @@ def quiz_sec1_q1(id = None):
 def quiz_sec2_cover():
     global user
     global media
-    global global_flow
-    return render_template('quiz_sec2_cover.html', user = user, flow=flow["quiz/sec_2/cover"], content = text['quiz_sec_2'] )
+    global flow
+    global text
+    return render_template('quiz_static.html', user=user, flow=flow['quiz/sec_2/cover'], media=media["color_wheel"], text=text["quiz_sec_2"], section=2)
 
 # quiz section2 question type1 -- choose picture type from complementary & analogus
 # @id: the id of the img for question
@@ -100,7 +125,15 @@ def quiz_sec2_cover():
 def quiz_sec2_q1(id):
     global user
     global media
-    return render_template('quiz_sec2_q1.html', user = user, question = media["color_context_"+str(id)], flow=flow["quiz/sec_2/q1/"+str(id)])
+    global flow
+    global media
+    return render_template(
+        'quiz_interactive.html', user=user, flow=flow["quiz/sec_2/q1/" + str(id)],
+        media=media["color_context_" + str(id)],
+        section=2, ans_section='sec_2/q1/'+str(id),
+        js_path="quiz_sec2_part1.js")
+
+
 
 
 # quiz section2 question type2 -- choose complementary colors
@@ -126,6 +159,15 @@ def quiz_end():
     global user
     return render_template('quiz_end.html', user = user,flow=flow["quiz/end"])
 
+
+# update score
+@app.route('/update_ans', methods=["POST"])
+def update_ans():
+    global user
+    json_data = request.get_json()
+    update_score(json_data['section'], json_data['answer'])
+    return jsonify(data=user)
+
 #
 #
 #
@@ -145,10 +187,12 @@ def quiz_end():
 #
 
 # template for static quiz page
-@app.route('/quiz/static_template')
-def quiz_static_template():
+
+
+@app.route('/quiz/static_template/<section>')
+def quiz_static_template(section):
     global user
-    return render_template('quiz_static.html', user=user, flow="/learn", media = media["color_wheel"], text=text["quiz_sec_2"], section=2)
+    return render_template('quiz_static.html', user=user, flow="/learn", media=media["color_wheel"], text=text["quiz_sec_"+section], section=section)
     
 # template for static(left) interactive(right) quiz page
 @app.route('/quiz/static_interactive_template')

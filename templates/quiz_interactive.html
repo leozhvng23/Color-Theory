@@ -3,19 +3,25 @@
 {% block header %}
 <script>
     let user = {{user|tojson}}
-    let id = {{id|tojson}}
+    let flow = {{flow|tojson}}
+    let js_path = {{js_path|tojson}}
+    let media = {{media|tojson}}
+    let ans_section = {{ans_section|tojson}}
 </script>
 <script type="module" src="{{ url_for('static', filename=js_path) }}"></script>
 {% endblock %}
 
 {% block right_arrow %}
-    <!-- <div class="progress_btn" onclick="location.href='{{flow}}'">
-        <div class="btn_text right"><span class="pg_progress">Next</span></div>
-        <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
-    </div> -->
-    <div class="progress_btn" onclick="location.href='{{flow['r_link']}}'">
+    <div class="progress_btn" onclick="location.href='../../../{{flow['r_link']}}'">
         <div class="btn_text right"><span class="pg_progress">{{flow['r_text']}}</span></div>
         <div class="arrow"><i class="fa fa-caret-right fa-xl" aria-hidden="true"></i></div>
+    </div>
+{% endblock %}
+
+{% block left_arrow %}
+    <div class="progress_btn" onclick="location.href='../../../{{flow['l_link']}}'">
+        <div class="arrow"><i class="fa fa-caret-left fa-xl" aria-hidden="true"></i></div>
+        <div class="btn_text left"><span class="pg_progress">{{flow['l_text']}}</span></div>
     </div>
 {% endblock %}
 
