@@ -212,12 +212,8 @@ a:hover{
     border: 1px solid #4295f5;
 }
 
-.quiz-choice-btn:active {
-background-color:  #4295f5;
-color: black;
-}
-.quiz-choice-btn:focus {
-    background-color:  #4295f5;
+.quiz-choice-btn.selected {
+    background-color: #4295f5;
     color: black;
 }
 .quiz-choice {

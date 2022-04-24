@@ -1,13 +1,13 @@
 {
-    "answers": {
-        "answer_1": "",
-        "answer_2":[],
-        "answer_3": ["#fffff"],
-        "answer_4": "complimentary",
-        "answer_5": "analogus",
-        "answer_6": ""
+    "answers":{
+        "sec_1/q1/1": ["#fffff"],
+        "sec_1/q1/2":["#fffff"],
+        "sec_2/q1/1":"complimentary",
+        "sec_2/q1/2": "Analagous",
+        "sec_2/q2/3": ["#fffff"],
+        "sec_2/q2/4": ["#fffff"],
+        "sec_2/q3/5": ["#fffff"]
     },
-
     "media":{
         "color_wheel":{
             "URL":"color_wheel_12_sides.png"
@@ -206,7 +206,7 @@
             "r_text":"Q1.2"
         },
         "quiz/sec_2/q1/2":{
-            "l_link":"quiz/sec_2/q1/1",
+            "l_link":"/quiz/sec_2/q1/1",
             "l_text":"Q1.1",
             "r_link":"/quiz/sec_2/q2/1",
             "r_text":"Q2.1"

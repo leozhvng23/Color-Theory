@@ -20,13 +20,37 @@ flow = json_data["flow"]
 
 user = {
     "score":0,
-    "answer_1": "",
-    "answer_2":[],
-    "answer_3": ["#fffff"],
-    "answer_4": "complimentary",
-    "answer_5": "analogus",
-    "answer_6": "",
+    "sec_1/q1/1": ["#fffff"],
+    "sec_1/q1/2": ["#fffff"],
+    "sec_2/q1/1": "complimentary",
+    "sec_2/q1/2": "Analagous",
+    "sec_2/q2/3": ["#fffff"],
+    "sec_2/q2/4": ["#fffff"],
+    "sec_2/q3/5": ["#fffff"]
 }
+
+scores = {
+    "sec_1/q1/1": 0,
+    "sec_1/q1/2": 0,
+    "sec_2/q1/1": 0,
+    "sec_2/q1/2": 0,
+    "sec_2/q2/3": 0,
+    "sec_2/q2/4": 0,
+    "sec_2/q3/5": 0
+}
+
+
+def update_score(question, ans):
+    user[question] = ans
+    if answers[question] == ans:
+        scores['question'] = 1
+    else:
+        scores['question'] = 0
+    new_score = 0
+    for i in scores:
+        new_score += scores[i]
+    user["score"] = new_score
+
 
 @app.route('/')
 def display_home():
@@ -103,7 +127,11 @@ def quiz_sec2_q1(id):
     global media
     global flow
     global media
-    return render_template('quiz_interactive.html', user=user, flow=flow["quiz/sec_2/q1/"+str(id)], media=media["color_context_"+str(id)], section=2, js_path="quiz_sec2_part1.js")
+    return render_template(
+        'quiz_interactive.html', user=user, flow=flow["quiz/sec_2/q1/" + str(id)],
+        media=media["color_context_" + str(id)],
+        section=2, ans_section='sec_2/q1/'+str(id),
+        js_path="quiz_sec2_part1.js")
 
 
 
@@ -130,6 +158,15 @@ def quiz_sec2_q3(id):
 def quiz_end():
     global user
     return render_template('quiz_end.html', user = user,flow=flow["quiz/end"])
+
+
+# update score
+@app.route('/update_ans', methods=["POST"])
+def update_ans():
+    global user
+    json_data = request.get_json()
+    update_score(json_data['section'], json_data['answer'])
+    return jsonify(data=user)
 
 #
 #
