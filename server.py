@@ -108,7 +108,7 @@ def display_learncolorarchitecture():
 
 @app.route('/learn/color_film')
 def display_learncolorfilm():
-    return render_template('learn_static.html', media=media["color_theory_in_film"], text=text["color_theory_in_film"], colors=colors["primary_colors"], flow=flow["learn/color_film"])
+    return render_template('learn_static.html', media=media["color_theory_in_film"], text=text["color_theory_in_film"], colors=colors["moonlight"], flow=flow["learn/color_film"])
 
 
 @app.route('/quiz/sec_1/cover')
