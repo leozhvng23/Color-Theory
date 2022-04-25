@@ -1,4 +1,4 @@
-let media = {{media|tojson}}
+
 $(document).ready(function(){
     let container = $("#interactive");
 
@@ -30,7 +30,6 @@ $(document).ready(function(){
         let data = {};
         data['section'] = ans_section;
         data['answer'] = e.target.dataset.choice;
-        console.log(data['answer'])
         $.ajax({
             type: "POST",
             url: "../../../update_ans",                

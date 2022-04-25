@@ -41,7 +41,13 @@ scores = {
 
 
 def update_score(question, ans):
+
     user[question] = ans
+    if question not in ["sec_2/q1/1", "sec_2/q1/2"]:
+        ans.sort()
+        answers[question].sort()
+        print(ans)
+        print(answers[question])
     if answers[question] == ans:
         scores[question] = 1
     else:
@@ -50,7 +56,6 @@ def update_score(question, ans):
     for i in scores:
         new_score += scores[i]
     user["score"] = new_score
-
 
 @app.route('/')
 def display_home():
@@ -149,7 +154,7 @@ def quiz_sec2_q1(id):
     return render_template(
         'quiz_interactive.html', user=user, flow=flow["quiz/sec_2/q1/" + str(id)],
         media=media["color_context_" + str(id)],
-        section=2, ans_section='sec_2/q1/'+str(id),
+        section=2, ans_section='sec_2/q1/'+str(id), id=id,
         js_path="quiz_sec2_part1.js")
 
 

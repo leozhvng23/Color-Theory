@@ -77,9 +77,29 @@ $( document ).ready(function(){
                 dropped_color.push(ui.draggable.attr("class").split(" ")[1])
                 if (num_dropped == 2) {
                     $(this).droppable('disable')
-                    mixColor()
-                }
+                    let data = {};
+                    data['section'] = ans_section;
+                    data['answer'] = dropped_color;
+                    console.log(data['answer']);
+                    $.ajax({
+                        type: "POST",
+                        url: "../../../update_ans",                
+                        dataType : "json",
+                        contentType: "application/json; charset=utf-8",
+                        data : JSON.stringify(data),
+                        success: function(result){
+                            mixColor()
+                            $('span.right_footnote').html("Score: "+result.data["score"]+"/10");
+                        },
+                        error: function(request, status, error){
+                            console.log("Error");
+                            console.log(request)
+                            console.log(status)
+                            console.log(error)
+                        }
+                    })
             }
+        }
     });
 
     c2c1.append(palette)
