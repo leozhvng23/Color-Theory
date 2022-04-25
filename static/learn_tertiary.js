@@ -51,8 +51,8 @@ $( document ).ready(function(){
 
     // palette in row 1 column 1
     let palette = $("<div class = 'color-circle main-palette-circle palette-circle palette-circle-big'></div>")
-    palette.append("<div class = 'learn-color-name'>Drop two</div>")
-    palette.append("<div class = 'learn-color-name'>colors here</div>")
+    palette.append("<div class = 'learn-color-name large'>Drop two</div>")
+    palette.append("<div class = 'learn-color-name large'>colors here</div>")
     $(palette).droppable({
         tolerance: "fit",
         accept: ".color-circle",

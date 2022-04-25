@@ -415,6 +415,10 @@ a:hover{
     color: #a1a1a1;;
     text-align: center;
 }
+.large{
+    font-size: 16px;
+}
+
 .learn-text {
     display: flex;
     flex-direction: column;
