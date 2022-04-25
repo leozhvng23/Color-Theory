@@ -39,6 +39,7 @@ $(document).ready(function(){
             success: function(result){
                 $(".selected").removeClass('selected');
                 $(e.target).addClass('selected');
+                $("button").prop("disabled",true);
                 $('span.right_footnote').html("Score: "+result.data["score"]+"/10")
             },
             error: function(request, status, error){
