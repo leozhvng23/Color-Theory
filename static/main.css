@@ -196,6 +196,24 @@ a:hover{
     font-weight: bold;
   }
 
+.sm_drag_circle {
+    width: 120px;
+    height: 120px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    background-color: #E9E9E9;
+    box-shadow: 3px 4px 7px #D6D6D6 inset;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+    color: #a1a1a1;
+    font-weight: bold;
+    font-size: 13px;
+}
   /* quiz section 2 */
 .quiz-choice-btn {
       margin: 5px;
@@ -212,7 +230,7 @@ a:hover{
     border: 1px solid #4295f5;
 }
 
-.quiz-choice-btn.selected {
+.quiz-choice-btnselected {
     background-color: #4295f5;
     color: black;
 }
@@ -265,8 +283,7 @@ a:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:fit-content;
-    padding: 60px;
+    width:fit-content
 }
 
 .learn_div{
