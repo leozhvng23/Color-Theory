@@ -449,7 +449,7 @@ a:hover{
 
 /* Interactive Module */
 .interactive_frame{
-    max-width: 800px;
+    max-width: 700px;
     min-width: 600px;
     display: inline-block;
     vertical-align: middle;
@@ -471,4 +471,50 @@ a:hover{
 .palette-reference {
     margin-top: 30px;
     margin-left: 30px;
+<<<<<<< HEAD
 }
+=======
+}
+
+/* Color Wheel*/
+
+.analogous_circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: lightgrey;
+}
+
+.analogous_circle.left{
+    float: left;
+    margin-left: 160px;
+}
+
+.analogous_circle.right{
+    float: right;
+    margin-right: 160px;
+}
+
+.analogous_frame{
+    margin-top: 50px;
+    width: 100%;
+}
+
+.colorwheel{
+    margin: auto;
+    width: 500px;
+    height: 500px;
+}
+
+svg{
+    stroke-width: 0%;
+}
+
+.pie_hover{
+    stroke-width: 3px;
+    stroke: white;
+    opacity: 40%;
+}
+
+>>>>>>> a2d0df7b19ed0b4e81b964b411af34f9497cc771

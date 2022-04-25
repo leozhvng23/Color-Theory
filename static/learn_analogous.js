@@ -1,31 +1,12 @@
-var OUTER_RADIUS = 250
+var OUTER_RADIUS = 220
 var INNER_RADIUS = 120
-
-function create_colorwheel(){
-    let colorwheel = $("<svg width='500' height='500' xmlns:svg='http://www.w3.org/2000/svg' xmlns='http://www.w3.org/2000/svg'>");
-    let colors = thecolors["colors"];
-    console.log(colors);
-    let pie_path = computePie();
-
-    $.each(colors, function(i, v){
-        let degree = 30 * i;
-        let id = "pie_" + i; /* id="pie_<id>" */
-        let new_pie = $("<path id='"+id+"' class='pie' d='"+pie_path+"' fill='"+colors[i]+"' transform='rotate("+degree+" "+OUTER_RADIUS+" "+OUTER_RADIUS+")'/>");
-        console.log("<path id='"+id+"' d='"+pie_path+"' fill='"+colors[i]+"' transform='rotate("+degree+" "+OUTER_RADIUS+" "+OUTER_RADIUS+")'/>")
-        colorwheel.append(new_pie);
-    })
-    $("#interactive").append(colorwheel);
-    /* refresh page to display svg */
-    $("body").html($("body").html());
-}
+var colors = thecolors["colors"];
 
 function getCoordinate(angleInDegrees, radius, center = OUTER_RADIUS) {
     // degrees to radians;
     let radians = angleInDegrees * (Math.PI / 180);
-  
     let x = center - Math.cos(radians) * radius
     let y = center - Math.sin(radians) * radius;
-  
     return [x, y];
 }
 
@@ -56,6 +37,48 @@ function computePie(){
     return commands
 }
 
+function create_colorwheel(){
+    let view_dim = OUTER_RADIUS * 2
+    let colorwheel = $("<svg viewBox='0 0 "+view_dim+" "+view_dim+"' class='colorwheel' xmlns='http://www.w3.org/2000/svg'>");
+    console.log(colors);
+    let pie_path = computePie();
+    // create each color pie
+    $.each(colors, function(i, v){
+        let degree = 30 * i;
+        let id = "pie_" + i; /* id="pie_<id>" */
+        let new_pie = $("<path id='"+id+"' class='pie' d='"+pie_path+"' fill='"+colors[i]+"' transform='rotate("+degree+" "+OUTER_RADIUS+" "+OUTER_RADIUS+")'/>");
+        console.log("<path id='"+id+"' d='"+pie_path+"' fill='"+colors[i]+"' transform='rotate("+degree+" "+OUTER_RADIUS+" "+OUTER_RADIUS+")'/>")
+        colorwheel.append(new_pie);
+    })
+    $("#interactive").append(colorwheel);
+    /* refresh to display svg */
+    $("body").html($("body").html());
+}
+
+function create_analogous(){
+    let analogous = $("<div class='analogous_frame'>");
+    let left_circle = $("<span class='analogous_circle left' id='analogous_left'>")
+    let right_circle = $("<span class='analogous_circle right' id='analogous_right'>")
+    analogous.append(left_circle);
+    analogous.append(right_circle);
+    $("#interactive").append(analogous);
+}
+
+
+
 $(document).ready(function(){
     create_colorwheel();
+    create_analogous();
+    $('.pie').hover(function(){
+        let cur_pie = $(this).attr('id');
+        let cur_id = parseInt(cur_pie.split('_')[1]);
+        let opposite_id = (cur_id + 6)%12;
+        let analogous_id = "#pie_" + opposite_id;
+        $("#" + cur_pie).toggleClass("pie_hover");
+        $(analogous_id).toggleClass("pie_hover");
+        console.log(colors[opposite_id]);
+        console.log(colors[cur_id]);
+        $("#analogous_left").css("background-color", colors[cur_id])
+        $("#analogous_right").css("background-color", colors[opposite_id])
+    })
 })
