@@ -4,9 +4,9 @@
         "sec_1/q1/2":["#0000FF", "#FFFF00"],
         "sec_2/q1/1":"complimentary",
         "sec_2/q1/2": "analagous",
-        "sec_2/q2/3": ["#fffff"],
-        "sec_2/q2/4": ["#fffff"],
-        "sec_2/q3/5": ["#fffff"]
+        "sec_2/q2/3":[["#492921", "#8cb891"], ["#8ca4b8", "#cf97b3"]],
+        "sec_2/q2/4": [["#2f6e57", "#412c1e"], ["#6a9a75", "#cbc277"]],
+        "sec_2/q3/5": ["#5f513b", "#2f6e57", "#412c1e"]
     },
     "media":{
         "color_wheel":{

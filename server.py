@@ -20,13 +20,13 @@ flow = json_data["flow"]
 
 user = {
     "score": 0,
-    "sec_1/q1/1": ["#fffff"],
-    "sec_1/q1/2": ["#fffff"],
+    "sec_1/q1/1": [],
+    "sec_1/q1/2": [],
     "sec_2/q1/1": "",
     "sec_2/q1/2": "",
-    "sec_2/q2/3": ["#fffff"],
-    "sec_2/q2/4": ["#fffff"],
-    "sec_2/q3/5": ["#fffff"]
+    "sec_2/q2/3": [],
+    "sec_2/q2/4": [],
+    "sec_2/q3/5": []
 }
 
 scores = {
@@ -41,13 +41,18 @@ scores = {
 
 
 def update_score(question, ans):
-
     user[question] = ans
-    if question not in ["sec_2/q1/1", "sec_2/q1/2"]:
+    print(user)
+    if question in ["sec_1/q1/1", "sec_1/q1/2", "sec_2/q3/5"]:
         ans.sort()
         answers[question].sort()
-        print(ans)
-        print(answers[question])
+    if question in ["sec_2/q2/3", "sec_2/q2/3"]:
+        for colorlist in ans:
+            colorlist.sort()
+        ans.sort()
+        for colorlist in answers[question]:
+            colorlist.sort()
+        answers[question].sort()
     if answers[question] == ans:
         scores[question] = 1
     else:
