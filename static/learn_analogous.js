@@ -5,7 +5,7 @@ var colors = thecolors["colors"];
 function getCoordinate(angleInDegrees, radius, center = OUTER_RADIUS) {
     // degrees to radians;
     let radians = angleInDegrees * (Math.PI / 180);
-    let x = center - Math.cos(radians) * radius
+    let x = center - Math.cos(radians) * radius + 10;
     let y = center - Math.sin(radians) * radius;
     return [x, y];
 }
@@ -14,11 +14,12 @@ function computePie(){
     let radiusOuter = OUTER_RADIUS;
     let radiusInner = INNER_RADIUS;
     let angleStart = 0;
-    let angleEnd = 30;
+    let angleEndLarge = 27;
+    let angleEndSmall = 24.8;
     let [x1, y1] = getCoordinate(angleStart, radiusInner); // starting angle on inner radius
     let [x2, y2] = getCoordinate(angleStart, radiusOuter); // starting angle on outer radius
-    let [x3, y3] = getCoordinate(angleEnd, radiusOuter); // ending angle on outer radius
-    let [x4, y4] = getCoordinate(angleEnd, radiusInner); // ending angle on inner radius
+    let [x3, y3] = getCoordinate(angleEndLarge, radiusOuter); // ending angle on outer radius
+    let [x4, y4] = getCoordinate(angleEndSmall, radiusInner); // ending angle on inner radius
     let largeArc = 0; // percent > 0.5 ? 1 : 0;
     let sweepOuter = 1;
     let sweepInner = 0;

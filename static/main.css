@@ -538,13 +538,16 @@ a:hover{
     height: 500px;
 }
 
-svg{
-    stroke-width: 0%;
+svg path{
+    stroke-width: 0px;
 }
 
 .pie_hover{
-    stroke-width: 3px;
-    stroke: white;
-    opacity: 40%;
+    filter: drop-shadow(3px 0 0.4rem rgb(102, 102, 102));
+    z-index: 100; 
+}
+
+.pie{
+    z-index: 3;
 }
 
