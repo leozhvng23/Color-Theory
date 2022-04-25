@@ -62,23 +62,23 @@ def display_learn():
 
 @app.route('/learn/primary')
 def display_learnprimary():
-    return render_template('learn.html', media = media["primary_colors"], text= text["primary_colors"], flow=flow["learn/primary"])
+    return render_template('learn.html', media = media["primary_colors"], text= text["primary_colors"], flow=flow["learn/primary"], colors = colors)
 
 @app.route('/learn/secondary')
 def display_learnsecondary():
-    return render_template('learn_interactive.html', text= text["secondary_colors"], flow=flow["learn/secondary"], js_path="learn_secondary.js")
+    return render_template('learn_interactive.html', text= text["secondary_colors"], flow=flow["learn/secondary"], js_path="learn_secondary.js", colors = colors)
     
 @app.route('/learn/tertiary')
 def display_learntertiary():
-    return render_template('learn_interactive.html', text= text["tertiary_colors"], flow=flow["learn/tertiary"], js_path="learn_tertiary.js")
+    return render_template('learn_interactive.html', text= text["tertiary_colors"], flow=flow["learn/tertiary"], js_path="learn_tertiary.js", colors = colors)
 
 @app.route('/learn/analogous')
 def display_learnanalogous():
-    return render_template('learn_interactive.html', media = media["analogous_colors"], text=text["analogous_colors"], flow=flow["learn/analogous"], js_path="learn_analogous.js")
+    return render_template('learn_interactive.html', text=text["analogous_colors"], flow=flow["learn/analogous"], js_path="learn_analogous.js", colors = {"colors":colors["12_colors"]})
 
 @app.route('/learn/complementary')
 def display_learncomplementary():
-    return render_template('learn_interactive.html', media = media["complementary_colors"], text=text["complementary_colors"], flow=flow["learn/complementary"], js_path="learn_complementary.js")
+    return render_template('learn_interactive.html', media = media["complementary_colors"], text=text["complementary_colors"], flow=flow["learn/complementary"], js_path="learn_complementary.js", colors = {"colors":colors["12_colors"]})
 
 @app.route('/learn/color_context')
 def display_learncolorcontext():

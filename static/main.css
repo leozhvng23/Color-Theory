@@ -265,7 +265,8 @@ a:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:fit-content
+    width:fit-content;
+    padding: 60px;
 }
 
 .learn_div{
@@ -454,4 +455,54 @@ a:hover{
 .palette-reference {
     margin-top: 30px;
     margin-left: 30px;
+}
+
+/* Color Wheel*/
+
+#pie_0:hover{
+    opacity: 0.5;
+}
+
+#pie_1:hover{
+    opacity: 0.5;
+}
+
+#pie_2:hover{
+    opacity: 0.5;
+}
+
+#pie_3:hover{
+    opacity: 0.5;
+}
+
+#pie_4:hover{
+    opacity: 0.5;
+}
+
+#pie_5:hover{
+    opacity: 0.5;
+}
+
+#pie_6:hover{
+    opacity: 0.5;
+}
+
+#pie_7:hover{
+    opacity: 0.5;
+}
+
+#pie_8:hover{
+    opacity: 0.5;
+}
+
+#pie_9:hover{
+    opacity: 0.5;
+}
+
+#pie_10:hover{
+    opacity: 0.5;
+}
+
+#pie_11:hover{
+    opacity: 0.5;
 }

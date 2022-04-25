@@ -2,6 +2,9 @@
 
 {% block header %}
 <script type="module" src="{{ url_for('static', filename=js_path) }}"></script>
+<script>
+    let thecolors = {{colors|tojson}}
+</script>
 {% endblock %}
 
 {% block left_arrow %}
