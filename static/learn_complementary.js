@@ -65,7 +65,6 @@ function create_complementary(){
 }
 
 
-
 $(document).ready(function(){
     create_colorwheel();
     create_complementary();

@@ -10,7 +10,7 @@ $(document).ready(function(){
 
     let choice = $('<div>');
     choice.attr("class", "quiz-choice");
-    let choice_button_1 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","complimentary");
+    let choice_button_1 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","complementary");
     choice_button_1.html('Complimentary');
     let choice_button_2 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","analagous");
     choice_button_2.html('Analagous');
