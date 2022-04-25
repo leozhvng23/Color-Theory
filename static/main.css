@@ -348,11 +348,11 @@ a:hover{
     justify-content: space-between;
 }
 .color-circle {
-    width: 60px;
-    height: 60px;
+    width: 80px;
+    height: 80px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
-    border-radius: 30px;
+    border-radius: 40px;
 }
 .palette {
     display: flex;
@@ -377,11 +377,11 @@ a:hover{
     border-radius: 125px;
 }
 .palette-circle-big {
-    width: 200px;
-    height: 200px;
+    width: 300px;
+    height: 300px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
-    border-radius: 100px;
+    border-radius: 150px;
 }
 .palette-circle-med {
     width: 100px;
@@ -392,11 +392,11 @@ a:hover{
     /* display: inline-block; */
 }
 .palette-circle-small {
-    width: 60px;
-    height: 60px;
+    width: 100px;
+    height: 100px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
-    border-radius: 30px;
+    border-radius: 50px;
 }
 .palette-reference {
     margin-top: 30px;
@@ -415,6 +415,10 @@ a:hover{
     color: #a1a1a1;;
     text-align: center;
 }
+.large{
+    font-size: 16px;
+}
+
 .learn-text {
     display: flex;
     flex-direction: column;
@@ -456,8 +460,13 @@ a:hover{
     vertical-align: middle;
 }
 .row-move-down {
-    margin-top: 30px;
+    margin-top: 50px;
 }
+
+.row-move-down-small{
+    margin-top: 20px;
+}
+
 .small-font {
     font-size: small;
 }
@@ -472,6 +481,14 @@ a:hover{
 .palette-reference {
     margin-top: 30px;
     margin-left: 30px;
+}
+.choose-column-container {
+    padding-left: 20px;
+}
+.choose-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Color Wheel*/

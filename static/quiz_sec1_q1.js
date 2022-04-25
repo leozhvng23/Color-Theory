@@ -43,8 +43,8 @@ $( document ).ready(function(){
     c1r1.append("Reference color: ")
     c1r2.append("Your mix result: ")
 
-    let c2 = $('<div class="col-7 choose-column">')
-    let c2c = $('<div class="row center-palette">')
+    let c2 = $('<div class="col-7 choose-column-container">')
+    let c2c = $('<div class="row choose-column">')
     let c2c1 = $('<div class = "col-lg-6 col-md-6 col-sm-12 center-image-left">')
     let c2c2 = $('<div class = "col-lg-3 col-md-3 col-sm-12">')
     let c2c3 = $('<div class = "col-lg-3 col-md-3 col-sm-12 center-image-right">')
