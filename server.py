@@ -164,7 +164,11 @@ def quiz_sec2_q1(id):
 def quiz_sec2_q2(id):
     global user
     global media
-    return render_template('quiz_sec2_q2.html', user=user, question=media["color_context_"+str(id)], flow=flow["quiz/sec_2/q2/"+str(id)])
+    return render_template(
+        'quiz_interactive.html', user=user, flow=flow["quiz/sec_2/q2/" + str(id)],
+        media=media["color_context_" + str(id)],
+        section=2, ans_section='sec_2/q2/'+str(id), id=id,
+        js_path="quiz_sec2_part2.js")
 
 # quiz section2 question type2 -- choose analogus colors
 # @id: the id of the img for question
@@ -174,8 +178,11 @@ def quiz_sec2_q2(id):
 def quiz_sec2_q3(id):
     global user
     global media
-    return render_template('quiz_sec2_q3.html', user=user, question=media["color_context_"+str(id)], flow=flow["quiz/sec_2/q3/"+str(id)])
-
+    return render_template(
+        'quiz_interactive.html', user=user, flow=flow["quiz/sec_2/q3/" + str(id)],
+        media=media["color_context_" + str(id)],
+        section=2, ans_section='sec_2/q3/'+str(id), id=id,
+        js_path="quiz_sec2_part3.js")
 # quiz section2 end
 # @id: the id of the img for question
 

@@ -196,6 +196,23 @@ a:hover{
     font-weight: bold;
   }
 
+.sm_drag_circle {
+    width: 140px;
+    height: 140px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 100px;
+    background-color: #E9E9E9;
+    box-shadow: 3px 4px 7px #D6D6D6 inset;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-style: italic;
+    color: #a1a1a1;
+    font-weight: bold;
+}
   /* quiz section 2 */
 .quiz-choice-btn {
       margin: 5px;
@@ -212,7 +229,7 @@ a:hover{
     border: 1px solid #4295f5;
 }
 
-.quiz-choice-btn.selected {
+.quiz-choice-btnselected {
     background-color: #4295f5;
     color: black;
 }
@@ -265,8 +282,7 @@ a:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width:fit-content;
-    padding: 60px;
+    width:fit-content
 }
 
 .learn_div{
@@ -455,54 +471,4 @@ a:hover{
 .palette-reference {
     margin-top: 30px;
     margin-left: 30px;
-}
-
-/* Color Wheel*/
-
-#pie_0:hover{
-    opacity: 0.5;
-}
-
-#pie_1:hover{
-    opacity: 0.5;
-}
-
-#pie_2:hover{
-    opacity: 0.5;
-}
-
-#pie_3:hover{
-    opacity: 0.5;
-}
-
-#pie_4:hover{
-    opacity: 0.5;
-}
-
-#pie_5:hover{
-    opacity: 0.5;
-}
-
-#pie_6:hover{
-    opacity: 0.5;
-}
-
-#pie_7:hover{
-    opacity: 0.5;
-}
-
-#pie_8:hover{
-    opacity: 0.5;
-}
-
-#pie_9:hover{
-    opacity: 0.5;
-}
-
-#pie_10:hover{
-    opacity: 0.5;
-}
-
-#pie_11:hover{
-    opacity: 0.5;
 }

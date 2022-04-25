@@ -19,6 +19,5 @@ $(document).ready(function(){
     });
     let r3 = $("<div class='row'></div>");
     c2.append(r3);
-    r3.append("<div class='col-4 sm_drag_circle'>drop two complementary colors here</div>");
-    r3.append("<div class='col-4 sm_drag_circle'>drop two complementary colors here</div>")
+    r3.append("<div class='col-4 mid_drag_circle'>drop three analogus colors here</div>");
 })
