@@ -37,17 +37,17 @@ function mixColor() {
 }
 
 $( document ).ready(function(){
-    let r1c1 = $('<div class = "col-lg-6 col-md-6 col-sm-12 center-image-left">')
-    let r1c2 = $('<div class = "col-lg-3 col-md-3 col-sm-12 center-image-right center-image-right-1">')
-    let r1c3 = $('<div class = "col-lg-3 col-md-3 col-sm-12 center-image-right center-image-right-2">')
+    let r1c1 = $('<div class = "col-lg-8 col-md-6 col-sm-12 center-image-left">')
+    let r1c2 = $('<div class = "col-lg-2 col-md-3 col-sm-12 center-image-right center-image-right-1">')
+    let r1c3 = $('<div class = "col-lg-2 col-md-3 col-sm-12 center-image-right center-image-right-2">')
 
     let r2 = $("<div class = 'row row-move-down'>")
-    let r2c1 = $('<div class = "col-lg-7 col-md-7 col-sm-12 color-examples color-examples-1">')
-    let r2c2 = $('<div class = "col-lg-5 col-md-5 col-sm-12">')
+    let r2c1 = $('<div class = "col-lg-8 col-md-7 col-sm-12 color-examples color-examples-1">')
+    let r2c2 = $('<div class = "col-lg-4 col-md-5 col-sm-12">')
 
-    let r3 = $("<div class = 'row row-move-down'>")
-    let r3c1 = $('<div class = "col-lg-7 col-md-7 col-sm-12 color-examples color-examples-2">')
-    let r3c2 = $('<div class = "col-lg-5 col-md-5 col-sm-12">')
+    let r3 = $("<div class = 'row row-move-down-small'>")
+    let r3c1 = $('<div class = "col-lg-8 col-md-7 col-sm-12 color-examples color-examples-2">')
+    let r3c2 = $('<div class = "col-lg-4 col-md-5 col-sm-12">')
 
     // palette in row 1 column 1
     let palette = $("<div class = 'color-circle main-palette-circle palette-circle palette-circle-big'></div>")

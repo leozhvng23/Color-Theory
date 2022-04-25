@@ -392,11 +392,11 @@ a:hover{
     /* display: inline-block; */
 }
 .palette-circle-small {
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
-    border-radius: 40px;
+    border-radius: 50px;
 }
 .palette-reference {
     margin-top: 30px;
@@ -456,8 +456,13 @@ a:hover{
     vertical-align: middle;
 }
 .row-move-down {
-    margin-top: 30px;
+    margin-top: 50px;
 }
+
+.row-move-down-small{
+    margin-top: 20px;
+}
+
 .small-font {
     font-size: small;
 }
