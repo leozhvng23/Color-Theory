@@ -1,3 +1,4 @@
+let media = {{media|tojson}}
 $(document).ready(function(){
     let container = $("#interactive");
 
