@@ -118,7 +118,8 @@
         "primary_colors": ["#FF0000","#0000FF","#FFFF00"],
         "secondary_colors": ["#FF0000","#0000FF","#FFFF00"],
         "tertiary_colors": ["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"],
-        "12_colors": ["#FF0000", "#FF007F", "#FF00FF", "#7F00FF", "#0000FF", "#007FFF", "#00FFFF", "#00FF7F", "#00FF00", "#7FFF00", "#FFFF00", "#FF7F00"]
+        "12_colors": ["#FF0000", "#FF007F", "#FF00FF", "#7F00FF", "#0000FF", "#007FFF", "#00FFFF", "#00FF7F", "#00FF00", "#7FFF00", "#FFFF00", "#FF7F00"],
+        "moonlight":["#D71FD1", "#2F5FDB", "#E19A3C"]
     },
 
     "flow":{

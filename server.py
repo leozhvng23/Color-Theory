@@ -94,11 +94,7 @@ def display_learnanalogous():
 
 @app.route('/learn/complementary')
 def display_learncomplementary():
-    return render_template(
-        'learn_interactive.html', media=media["complementary_colors"],
-        text=text["complementary_colors"],
-        flow=flow["learn/complementary"],
-        js_path="learn_complementary.js", colors={"colors": colors["12_colors"]})
+    return render_template('learn_interactive.html', text=text["complementary_colors"], flow=flow["learn/complementary"], js_path="learn_complementary.js", colors={"colors": colors["12_colors"]})
 
 
 @app.route('/learn/color_context')
@@ -117,7 +113,7 @@ def display_learncolorarchitecture():
 
 @app.route('/learn/color_film')
 def display_learncolorfilm():
-    return render_template('learn_static.html', media=media["color_theory_in_film"], text=text["color_theory_in_film"], colors=colors["primary_colors"], flow=flow["learn/color_film"])
+    return render_template('learn_static.html', media=media["color_theory_in_film"], text=text["color_theory_in_film"], colors=colors["moonlight"], flow=flow["learn/color_film"])
 
 
 @app.route('/quiz/sec_1/cover')
