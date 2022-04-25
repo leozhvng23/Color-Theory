@@ -197,8 +197,8 @@ a:hover{
   }
 
 .sm_drag_circle {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
@@ -212,6 +212,7 @@ a:hover{
     font-style: italic;
     color: #a1a1a1;
     font-weight: bold;
+    font-size: 13px;
 }
   /* quiz section 2 */
 .quiz-choice-btn {
