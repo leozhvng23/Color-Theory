@@ -57,13 +57,14 @@ function create_colorwheel(){
 
 function create_analogous(){
     let analogous = $("<div class='analogous_frame'>");
-    let left_circle = $("<span class='analogous_circle left' id='analogous_left'>")
-    let right_circle = $("<span class='analogous_circle right' id='analogous_right'>")
+    let left_circle = $("<span class='analogous_circle' id='analogous_left'>")
+    let mid_circle = $("<span class='analogous_circle' id='analogous_mid'>")
+    let right_circle = $("<span class='analogous_circle' id='analogous_right'>")
     analogous.append(left_circle);
+    analogous.append(mid_circle);
     analogous.append(right_circle);
     $("#interactive").append(analogous);
 }
-
 
 
 $(document).ready(function(){
@@ -72,13 +73,18 @@ $(document).ready(function(){
     $('.pie').hover(function(){
         let cur_pie = $(this).attr('id');
         let cur_id = parseInt(cur_pie.split('_')[1]);
-        let opposite_id = (cur_id + 6)%12;
-        let analogous_id = "#pie_" + opposite_id;
+        let left_id = (cur_id + 11) % 12;
+        let right_id = (cur_id + 1) % 12;
+        let comp_left = "#pie_" + left_id;
+        let comp_right = "#pie_" + right_id;
         $("#" + cur_pie).toggleClass("pie_hover");
-        $(analogous_id).toggleClass("pie_hover");
-        console.log(colors[opposite_id]);
-        console.log(colors[cur_id]);
-        $("#analogous_left").css("background-color", colors[cur_id])
-        $("#analogous_right").css("background-color", colors[opposite_id])
+        $(comp_left).toggleClass("pie_hover");
+        $(comp_right).toggleClass("pie_hover");
+        console.log(left_id);
+        console.log(right_id);
+        console.log(cur_id);
+        $("#analogous_left").css("background-color", colors[left_id])
+        $("#analogous_mid").css("background-color", colors[cur_id])
+        $("#analogous_right").css("background-color", colors[right_id])
     })
 })

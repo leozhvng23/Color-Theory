@@ -459,7 +459,7 @@ a:hover{
 
 /* Color Wheel*/
 
-.analogous_circle{
+.complementary_circle{
     height: 100px;
     width: 100px;
     border-radius: 50%;
@@ -467,19 +467,35 @@ a:hover{
     background-color: lightgrey;
 }
 
-.analogous_circle.left{
+.complementary_circle.left{
     float: left;
     margin-left: 160px;
 }
 
-.analogous_circle.right{
+.complementary_circle.right{
     float: right;
     margin-right: 160px;
+}
+
+.complementary_frame{
+    margin-top: 50px;
+    width: 100%;
 }
 
 .analogous_frame{
     margin-top: 50px;
     width: 100%;
+    text-align: center;
+}
+
+.analogous_circle{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    display: inline-block;
+    background-color: lightgrey;
+    margin-left: 30px;
+    margin-right: 30px;
 }
 
 .colorwheel{

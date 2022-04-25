@@ -89,11 +89,7 @@ def display_learnanalogous():
 
 @app.route('/learn/complementary')
 def display_learncomplementary():
-    return render_template(
-        'learn_interactive.html', media=media["complementary_colors"],
-        text=text["complementary_colors"],
-        flow=flow["learn/complementary"],
-        js_path="learn_complementary.js", colors={"colors": colors["12_colors"]})
+    return render_template('learn_interactive.html', text=text["complementary_colors"], flow=flow["learn/complementary"], js_path="learn_complementary.js", colors={"colors": colors["12_colors"]})
 
 
 @app.route('/learn/color_context')
