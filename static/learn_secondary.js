@@ -2,7 +2,9 @@ import {mix_hexes} from './mix.js'
 let learn_interactive_data = {
     "secondary" : {
         "color_list":["#FF0000","#0000FF","#FFFF00"],
-        "example_list":[{"#ff8001":"Orange"},{"#00ff00":"Green"},{"#800180":"Violet"}]
+        // "example_list":[{"#ff8001":"Orange"},{"#00ff00":"Green"},{"#800180":"Violet"}],
+        "example_list":[{"#ff8001":"Red-Yellow"},{"#00ff00":"Blue-Yellow"},{"#800180":"Red-Blue"}],
+        "color_names":{"#ff8001":"Orange","#00ff00":"Green","#800180":"Purple"}
     },
     "tertiary" : {
         "color_list":["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"],
@@ -22,7 +24,7 @@ function mixColor() {
     let result = ""
     if (c1 == "#0000ff" && c2 == "#ffff00" || c2 == "#0000ff" && c1 == "#ffff00") {
         result = "#00ff00"
-        target += "Green"
+        target += "Blue-Yellow"
     }
     else {
         result = mix_hexes(c1, c2)
@@ -35,6 +37,7 @@ function mixColor() {
     $(target).empty()
     $(target).css({"background":result})
     $(target).removeClass("palette-circle")
+    $(target).append('<div class = "display-color-name">'+learn_interactive_data["secondary"]["color_names"][result])
     num_dropped = 0
     dropped_color = []
 }

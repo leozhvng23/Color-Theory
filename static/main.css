@@ -491,6 +491,21 @@ a:hover{
     align-items: center;
 }
 
+.quiz-1-button {
+    margin-left: 30px;
+    background-color: #dddddd; /* Green */
+    border: none;
+    border-radius: 4px;
+    width: 100px;
+}
+.floating {
+    position: relative;
+    z-index: 1;
+}
+.display-color-name {
+    color: white;
+}
+
 /* Color Wheel*/
 
 .complementary_circle{

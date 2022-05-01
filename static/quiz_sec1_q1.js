@@ -2,26 +2,23 @@ import {mix_hexes} from './mix.js'
 
 let questions = {
     "1" : {
-        "reference" : "#ff8001",
+        "reference" : "#b3016e",
         "choices" : ["#FF0000","#0000FF","#FFFF00"],
     },
     "2" : {
-        "reference" : "#00ff00",
+        "reference" : "#07657b",
         "choices" : ["#FF0000","#0000FF","#FFFF00"],
     }
 }
 
 let num_dropped = 0
 let dropped_color = []
+let num_reset = 0
+let result = ""
 
 function mixColor() {
-    $(".palette-circle-bigger").empty()
-    $(".palette-circle-bigger").append("<div class = 'learn-color-name'>Drop two</div>")
-    $(".palette-circle-bigger").append("<div class = 'learn-color-name'>colors here</div>")
-
-    let c1 = dropped_color[0].toLowerCase()
-    let c2 = dropped_color[1].toLowerCase()
-    let result = ""
+    let c1 = dropped_color[dropped_color.length - 2].toLowerCase()
+    let c2 = dropped_color[dropped_color.length - 1].toLowerCase()
     if (c1 == "#0000ff" && c2 == "#ffff00" || c2 == "#0000ff" && c1 == "#ffff00") {
         result = "#00ff00"
     }
@@ -29,11 +26,16 @@ function mixColor() {
         result = mix_hexes(c1, c2)
     }
 
-    $(".mix-result").css({"background":result})
-    $(".mix-result").removeClass("palette-circle")
+    if (result == "#018080") {
+        result = "#07657b"
+    }
+    else if (result == "#c00160") {
+        result = "#b3016e"
+    }
 
-    num_dropped = 0
-    dropped_color = []
+    dropped_color.push(result)
+    console.log(result)
+    $(".palette-result").css({"background":result})
 }
 
 $( document ).ready(function(){
@@ -58,6 +60,16 @@ $( document ).ready(function(){
     $("#interactive").append(c1)
     $("#interactive").append(c2)
 
+    // second row
+    let r2 = $('<div class="row container interact" id="interactive-2">')
+    let r2c1 = $('<div class="col-md-5">')
+    let r2c2 = $('<div class="button-container col-md-7">')
+    r2.append(r2c1)
+    r2.append(r2c2)
+    r2c2.append('<button class = "reset-button quiz-1-button">Reset')
+    r2c2.append('<button class = "confirm-button quiz-1-button">Confirm')
+    $(".interactive_frame").append(r2)
+
     let left_ref = $("<div class = 'color-circle palette-circle-med palette-reference div-inline' style='background: "+questions[id]["reference"]+";'></div>")
     c1r1.append(left_ref)
     let left_res = $("<div class = 'color-circle palette-circle palette-circle-med palette-reference div-inline mix-result'></div>")
@@ -70,34 +82,40 @@ $( document ).ready(function(){
     $(palette).droppable({
         tolerance: "fit",
         accept: ".color-circle",
+        greedy:true,
         drop: function(event, ui) {
-                let temp = $(ui.helper).clone();
-                $(this).append(temp);
                 num_dropped += 1
+                let value = ui.draggable.attr("class").split(" ")[1]
+                result = value
+                if (num_dropped < 2) {
+                    let new_object = $("<div class = 'floating palette-result color-circle "+value+"' style='background: "+value+";'></div>")
+                    palette.append(new_object)
+                }                
+                
                 dropped_color.push(ui.draggable.attr("class").split(" ")[1])
-                if (num_dropped == 2) {
-                    $(this).droppable('disable')
-                    let data = {};
-                    data['section'] = ans_section;
-                    data['answer'] = dropped_color;
-                    console.log(data['answer']);
-                    $.ajax({
-                        type: "POST",
-                        url: "../../../update_ans",                
-                        dataType : "json",
-                        contentType: "application/json; charset=utf-8",
-                        data : JSON.stringify(data),
-                        success: function(result){
-                            mixColor()
-                            $('span.right_footnote').html("Score: "+result.data["score"]+"/10");
-                        },
-                        error: function(request, status, error){
-                            console.log("Error");
-                            console.log(request)
-                            console.log(status)
-                            console.log(error)
-                        }
-                    })
+                if (num_dropped >= 2) {
+                    mixColor()
+                    // let data = {};
+                    // data['section'] = ans_section;
+                    // data['answer'] = dropped_color;
+                    // console.log(data['answer']);
+                    // $.ajax({
+                    //     type: "POST",
+                    //     url: "../../../update_ans",                
+                    //     dataType : "json",
+                    //     contentType: "application/json; charset=utf-8",
+                    //     data : JSON.stringify(data),
+                    //     success: function(result){
+                    //         mixColor()
+                    //         $('span.right_footnote').html("Score: "+result.data["score"]+"/10");
+                    //     },
+                    //     error: function(request, status, error){
+                    //         console.log("Error");
+                    //         console.log(request)
+                    //         console.log(status)
+                    //         console.log(error)
+                    //     }
+                    // })
             }
         }
     });
@@ -123,4 +141,25 @@ $( document ).ready(function(){
 
         c2c3.append(color_circle)
     })
+
+    $(".reset-button").click(function() {
+        console.log("cliclked")
+        num_dropped = 0
+        dropped_color = []
+        num_reset += 1
+        $(".palette-circle-bigger").empty()
+        $(".palette-circle-bigger").append("<div class = 'learn-color-name'>Drop two</div>")
+        $(".palette-circle-bigger").append("<div class = 'learn-color-name'>colors here</div>")
+    });
+
+    $(".confirm-button").click(function() {
+        if (num_dropped != 0) {
+            $(".mix-result").css({"background":result})
+            $(".mix-result").removeClass("palette-circle")
+            $(".palette-circle-bigger").empty()
+            $(".palette-circle-bigger").append("<div class = 'learn-color-name'>Drop two</div>")
+            $(".palette-circle-bigger").append("<div class = 'learn-color-name'>colors here</div>")
+            $(".main-palette-circle").droppable('disable')
+        }
+    });
 })
