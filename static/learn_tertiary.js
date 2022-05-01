@@ -40,7 +40,7 @@ function mixColor() {
 }
 
 $( document ).ready(function(){
-    let r1c1 = $('<div class = "col-lg-8 col-md-6 col-sm-12 center-image-left">')
+    let r1c1 = $('<div class = "col-lg-7 col-md-6 col-sm-12 center-image-left">')
     let r1c2 = $('<div class = "col-lg-2 col-md-3 col-sm-12 center-image-right center-image-right-1">')
     let r1c3 = $('<div class = "col-lg-2 col-md-3 col-sm-12 center-image-right center-image-right-2">')
 

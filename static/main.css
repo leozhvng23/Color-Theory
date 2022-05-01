@@ -353,7 +353,23 @@ a:hover{
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 40px;
+    margin: 5px;
 }
+
+.ui-draggable{
+    cursor: grab;
+    cursor: -webkit-grab;
+}
+
+.ui-draggable:active{
+    cursor: grabbing;
+    cursor: -webkit-grabbing;
+}
+
+.left_space{
+    margin-left: 1000px;
+}
+
 .palette {
     display: flex;
     justify-content: center;
@@ -455,10 +471,18 @@ a:hover{
 /* Interactive Module */
 .interactive_frame{
     max-width: 700px;
-    min-width: 600px;
+    min-width: 700px;
     display: inline-block;
     vertical-align: middle;
 }
+
+.interactive_frame_large{
+    max-width: 100%;
+    min-width: 1000px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
 .row-move-down {
     margin-top: 50px;
 }
@@ -483,21 +507,40 @@ a:hover{
     margin-left: 30px;
 }
 .choose-column-container {
-    padding-left: 20px;
+
 }
+
 .choose-column {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 320px;
+    margin-top: -20px;
+    width: 400px;
 }
 
 .quiz-1-button {
-    margin-left: 30px;
-    background-color: #dddddd; /* Green */
-    border: none;
-    border-radius: 4px;
-    width: 100px;
+    margin-left: 55px;
+    border: 0px;
+    background-color: lightgray;
+    font-style: italic;
+    color: #a1a1a1;
+    width: 60px;
+    height: 60px;
+    border-radius: 30px;
 }
+
+.reset-button:hover{
+    background-color: #a1a1a1;
+    color: white;
+}
+
+.confirm-button:hover{
+    background-color: #a1a1a1;
+    color: white;
+}
+
+
 .floating {
     position: relative;
     z-index: 1;
@@ -566,3 +609,12 @@ svg path{
     z-index: 3;
 }
 
+.instruct_text{
+    font-size: 18px;
+    width: 80px;
+    margin-right: 10px;
+}
+
+.button-container{
+    padding-left: 0px;
+}

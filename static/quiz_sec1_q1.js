@@ -42,19 +42,18 @@ $( document ).ready(function(){
     let c1 = $('<div class="col-5 reference-column">')
     let c1r1 = $('<div class = "reference-container verticalcenter div-inline">')
     let c1r2 = $('<div class = "result-container verticalcenter">')
-    c1r1.append("Reference color: ")
-    c1r2.append("Your mix result: ")
+    c1r1.append("<span class='instruct_text'> Reference color: </span>")
+    c1r2.append("<span class='instruct_text'> Your mix result: </span>")
 
     let c2 = $('<div class="col-7 choose-column-container">')
     let c2c = $('<div class="row choose-column">')
-    let c2c1 = $('<div class = "col-lg-6 col-md-6 col-sm-12 center-image-left">')
-    let c2c2 = $('<div class = "col-lg-3 col-md-3 col-sm-12">')
-    let c2c3 = $('<div class = "col-lg-3 col-md-3 col-sm-12 center-image-right">')
+    let c2c1 = $('<div class = "col-lg-9 col-md-6 col-sm-12 center-image-left">')
+    let c2c3 = $('<div class = "col-lg-3 col-md-3 col-sm-12 center-image-right color-col">')
 
     c1.append(c1r1)
     c1.append(c1r2)
     c2c.append(c2c1)
-    c2c.append(c2c2)
+    
     c2c.append(c2c3)
     c2.append(c2c)
     $("#interactive").append(c1)
@@ -66,8 +65,8 @@ $( document ).ready(function(){
     let r2c2 = $('<div class="button-container col-md-7">')
     r2.append(r2c1)
     r2.append(r2c2)
-    r2c2.append('<button class = "reset-button quiz-1-button">Reset')
-    r2c2.append('<button class = "confirm-button quiz-1-button">Confirm')
+    r2c2.append('<button class = "reset-button quiz-1-button" title="reset"><i class="fa fa-repeat fa-2xl" aria-hidden="true"></i>')
+    r2c2.append('<button class = "confirm-button quiz-1-button" title="submit"><i class="fa fa-check fa-2xl" aria-hidden="true">')
     $(".interactive_frame").append(r2)
 
     let left_ref = $("<div class = 'color-circle palette-circle-med palette-reference div-inline' style='background: "+questions[id]["reference"]+";'></div>")
@@ -76,8 +75,7 @@ $( document ).ready(function(){
     c1r2.append(left_res)
     let palette = $("<div class = 'color-circle main-palette-circle palette-circle palette-circle-bigger'></div>")
 
-    palette.append("<div class = 'learn-color-name'>Drop two</div>")
-    palette.append("<div class = 'learn-color-name'>colors here</div>")
+    palette.append("<div class = 'learn-color-name large'>Drop colors here</div>")
 
     $(palette).droppable({
         tolerance: "fit",
@@ -148,18 +146,19 @@ $( document ).ready(function(){
         dropped_color = []
         num_reset += 1
         $(".palette-circle-bigger").empty()
-        $(".palette-circle-bigger").append("<div class = 'learn-color-name'>Drop two</div>")
-        $(".palette-circle-bigger").append("<div class = 'learn-color-name'>colors here</div>")
+        $(".palette-circle-bigger").append("<div class = 'learn-color-name large'>Drop colors here</div>")
+        $(".mix-result").css({"background":"#E9E9E9"})
     });
 
     $(".confirm-button").click(function() {
         if (num_dropped != 0) {
-            $(".mix-result").css({"background":result})
+            $(".mix-result").css({"background": result})
             $(".mix-result").removeClass("palette-circle")
             $(".palette-circle-bigger").empty()
-            $(".palette-circle-bigger").append("<div class = 'learn-color-name'>Drop two</div>")
-            $(".palette-circle-bigger").append("<div class = 'learn-color-name'>colors here</div>")
+            $(".palette-circle-bigger").append("<div class = 'learn-color-name large'>Drop colors here</div>")
             $(".main-palette-circle").droppable('disable')
+            $(".reset-button").prop("disabled", true);
+            $(this).prop("disabled", true);
         }
     });
 })
