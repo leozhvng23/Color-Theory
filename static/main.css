@@ -18,7 +18,7 @@ span{
 
 p{
     font-family: gibbs, sans-serif;
-    font-size: 16px;
+    font-size: 18px;
     color: var(--black);
 }
 
@@ -345,8 +345,8 @@ a:hover{
 
 .circle_frame{
     display: inline-flex;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
     margin: auto;
 }
 
@@ -553,8 +553,8 @@ a:hover{
 
 /* Interactive Module */
 .interactive_frame{
-    max-width: 700px;
-    min-width: 700px;
+    max-width: 650px;
+    min-width: 650px;
     display: inline-block;
     vertical-align: middle;
 }

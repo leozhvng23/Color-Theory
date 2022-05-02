@@ -43,9 +43,9 @@ function mixColor() {
 }
 
 $( document ).ready(function(){
-    let r1c1 = $('<div class = "col-lg-7 col-md-6 col-sm-12">')
+    let r1c0 =$('<div class = "col-lg-1 col-md-1 col-sm-1">') 
+    let r1c1 = $('<div class = "col-lg-8 col-md-6 col-sm-12">')
     let r1c2 = $('<div class = "col-lg-2 col-md-3 col-sm-12 center-image-right center-image-right-1">')
-    let r1c3 = $('<div class = "col-lg-3 col-md-3 col-sm-12 center-image-right center-image-right-2">')
 
     let r2 = $("<div class = 'row row-move-down'>")
     let r2c1 = $('<div class = "col-lg-8 col-md-6 col-sm-12 color-examples color-examples-1">')
@@ -102,9 +102,9 @@ $( document ).ready(function(){
         }
     })
 
+    $("#interactive").append(r1c0)
     $("#interactive").append(r1c1)
     $("#interactive").append(r1c2)
-    $("#interactive").append(r1c3)
     r2.append(r2c1)
     r2.append(r2c2)
     $(".interactive_frame").append(r2)

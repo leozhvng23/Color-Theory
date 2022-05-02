@@ -48,7 +48,7 @@ $( document ).ready(function(){
     let c1r1 = $('<div class = "reference-container verticalcenter div-inline">')
     let c1r2 = $('<div class = "result-container verticalcenter">')
     c1r1.append("<span class='instruct_text'> Reference color: </span>")
-    c1r2.append("<span class='instruct_text'> Your mix result: </span>")
+    c1r2.append("<span class='instruct_text'> Your answer: </span>")
 
     let c2 = $('<div class="col-7 choose-column-container">')
     let c2c = $('<div class="row choose-column">')

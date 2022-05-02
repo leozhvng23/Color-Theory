@@ -34,7 +34,7 @@
             "URL":"schroder_house.jpeg"
         },
         "color_theory_in_film":{
-            "URL":"moonlight.jpeg"
+            "URL":"moonlight.png"
         },    
         "color_context_1":{
             "id":"1",
@@ -63,7 +63,7 @@
         "color_context_5":{
             "id":"5",
             "url":"nighthawks.png",
-            "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#328992","#89BD4A"],
+            "colors":["#181f1f","#6a9a75","#953d10","#5f513b","#328992","#89BD4A"],
             "type":"analogus"
         },
         "color_context_6":{
@@ -83,7 +83,7 @@
     "text":{
         "intro_to_colorwheel":{
             "title":"The Color Wheel",
-            "content":"The color wheel, sometimes called a color circle, is a circular arrangement of colors organized by their chromatic relationship to one another. The primary colors are equidistant from each other on the wheel, and secondary and tertiary colors sit between them. It’s used in art and design to choose colors and color schemes based on their relationships to one another."
+            "content":"The color wheel is a circular arrangement of colors organized by their chromatic relationship to one another. The primary colors are equidistant from each other on the wheel, and secondary and tertiary colors sit between them. It’s used in art and design to choose colors and color schemes based on their relationships to one another."
         },
         "primary_colors":{
             "title":"Primary Colors",
@@ -95,15 +95,15 @@
         },
         "tertiary_colors":{
             "title":"Tertiary Colors",
-            "content":"Yellow-orange, red-orange, red-purple, blue-purple, blue-green & yellow-green.\nThese are the colors formed by mixing a primary and a secondary color. That's why the hue is a two word name, such as blue-green, red-violet, and yellow-orange."
+            "content":"Amber, vermilion, magenta, violet, teal, and chartreuse.\n These are the colors formed by mixing a primary and a secondary color. Try it for yourself!"
         },
         "analogous_colors":{
             "title":"Analogous Colors",
-            "content": "Analogous colors are any three colors which are side by side on a 12-part color wheel, such as yellow-green, yellow, and yellow-orange. Usually one of the three colors predominates."
+            "content": "Analogous colors are any three colors which are side by side on a 12-part color wheel. Hover your mouse around the color wheel to see any set of three analogous colors!"
         },
         "complementary_colors":{
             "title":"Complementary Colors",
-            "content":"Complementary colors are any two colors which are directly opposite each other, such as red and green and red-purple and yellow-green. In the illustration above, there are several variations of yellow-green in the leaves and several variations of red-purple in the orchid. These opposing colors create maximum contrast and maximum stability."
+            "content":"Complementary colors are any two colors which are directly opposite each other. These opposing colors create maximum contrast. Hover your mouse around the color wheel to see any pair of complementary colors!"
         },
         "color_theory_in_context":{
             "title":"Color Theory in Context",
@@ -111,21 +111,21 @@
         },
         "color_theory_in_architecture":{
             "title":"Color Theory in Architecture",
-            "content":"The Rietveld Schröder House is an architectural master piece featuring fluid transitions between interior and exterior, clean horizontal and vertical lines and the use of all primary colors, alongside white, grey and black."
+            "content":"For example, the Rietveld Schröder House is an architectural master piece featuring fluid transitions between interior and exterior, clean horizontal and vertical lines and the use of all primary colors, alongside white, grey and black."
         },
         "color_theory_in_film":{
             "title":"Color Theory in Film",
-            "content":"Barry Jenkin's “Moonlight” is praised for using two sets of complimentary colors to contrast different characters, moods, and emotions."
+            "content":"Barry Jenkin's “Moonlight” is praised for using two sets of complementary colors (purple-yellow and blue-orange) to contrast different characters, moods, and emotions."
         },
         "quiz_sec_1":{
             "section":"1",
             "title":"Primary Secondary, and Tertiary Colors",
-            "content":"In this section, we will ask you to create a color using only the primary colors.\nTo create a new color, drag any two colors into the mixing area and a new color will appear in the center. You can repeat this task a number of times until you are satisfied with your answer. Drop your final color in answer box to continue.\nNote: You will be penalized if you create any unnecessary colors in the process!\nYou can practice using the mixing tools here before you start the quiz."
+            "content":"In this section, we will ask you to create a color using only primary colors.\nTo create a new color, drag any two colors into the mixing area and a new color will appear in the center. You can repeat this action until you are satisfied with your answer. Click confirm to submit your answer.\n You can practice using the mixing tools here before you start the quiz."
         },
         "quiz_sec_2":{
             "section":"2",
             "title":"Colors in Context",
-            "content":"Here we ask you to identify the types of color harmony in the pictures shown. Select whether the main colors in the picture is analogous or complementary.\nHere is the color wheel for your reference. "
+            "content":"Here we ask you to identify the types of color harmony in the pictures shown. Select whether the main colors in the picture is analogous or complementary.\n You can refer to this colorwheel at anytime during the quiz with the eyedropper button below."
         }
     },
 
@@ -134,7 +134,7 @@
         "secondary_colors": ["#FF0000","#0000FF","#FFFF00"],
         "tertiary_colors": ["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"],
         "12_colors": ["#FF0000", "#FF007F", "#FF00FF", "#7F00FF", "#0000FF", "#007FFF", "#00FFFF", "#00FF7F", "#00FF00", "#7FFF00", "#FFFF00", "#FF7F00"],
-        "moonlight":["#D71FD1", "#2F5FDB", "#E19A3C"]
+        "moonlight":["#D71FD1", "#e3f02d", "#2F5FDB", "#E19A3C"]
     },
 
     "flow":{
