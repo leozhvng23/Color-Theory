@@ -272,18 +272,29 @@ a:hover{
 
 
 /* images */
-.quiz-image {
+.quiz-image-center {
     display: flex;
     display: -webkit-flex;
     justify-content: center;
     align-items: center;
+    width: 500px;
+    margin: auto;
+    }
 
-}
-
-.quiz-image img {
+.quiz-image-center img {
     border-radius: 5%;
 }
 
+.quiz-image-left {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quiz-image-left img {
+    border-radius: 5%;
+}
 /* color circles*/
 
 .color_circles{

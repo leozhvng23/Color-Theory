@@ -3,7 +3,7 @@ $(document).ready(function(){
     let container = $("#interactive");
 
     let painting = $('<div>');
-    painting.attr("class", "quiz-image");
+    painting.attr("class", "quiz-image-center");
     painting.append("<img src='../../../static/images/"+media.url+"'>");
     container.append(painting);
 
