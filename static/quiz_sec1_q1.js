@@ -39,7 +39,7 @@ function mixColor() {
     }
 
     dropped_color.push(result)
-    console.log(result)
+
     $(".palette-result").css({"background":result})
 }
 

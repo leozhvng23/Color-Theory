@@ -41,8 +41,15 @@ a:hover{
 }
 
 .site_title{
-    font-size: clamp(1.2rem, 3.2vw, 4vh);
+    font-size: clamp(1.4rem, 3.6vw, 5.3vh);
     color: white;
+
+}
+
+.site_subtitle{
+    font-size: clamp(0.6em, 2.1vw, 2.2vh);
+    color: white;  
+    font-style: oblique;
 }
 
 .menu_item{
@@ -318,9 +325,19 @@ a:hover{
 
 .title_frame{
     position: fixed;
-    top: 50%;
+    top: 46%;
     left: 50%;
     transform: translate(-50%, -50%);
+    text-align: center; 
+}
+
+.subtitle_frame{
+    position: fixed;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; 
+    width: 600px;
 }
 
 .circle_frame{
@@ -379,8 +396,8 @@ a:hover{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    max-width: 900px;
-    min-width: 400px;
+    max-width: 950px;
+    min-width: 450px;
 }
 
   /* quiz end */
