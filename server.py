@@ -158,7 +158,6 @@ def quiz_sec1_cover():
         "sec_2/q2/4": [],
         "sec_2/q3/5": []
     }
-<<<<<<< HEAD
     scores = {
         "sec_1/q1/1": 0,
         "sec_1/q1/2": 0,
@@ -173,11 +172,7 @@ def quiz_sec1_cover():
         "sec_2/q3/5": 0
     }
 
-    return render_template('quiz_sec1_cover.html', user=user, text=text["quiz_sec_1"], flow=flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js")
-=======
-    return render_template('quiz_sec1_cover.html', user=user, text=text["quiz_sec_1"], flow=flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js", section= '1')
->>>>>>> e633453a76a1c5b812fde55808b9a588858f593d
-    # return render_template('quiz_static.html', user = user, text = text["quiz_sec_1"], flow = flow["quiz/sec_1/cover"])
+    return render_template('quiz_sec1_cover.html', user=user, text=text["quiz_sec_1"], flow=flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js", section='1')
 
 
 @app.route('/quiz/sec_1/q1/<id>')
