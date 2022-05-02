@@ -87,6 +87,7 @@ $( document ).ready(function(){
                 result = value
                 if (num_dropped < 2) {
                     let new_object = $("<div class = 'floating palette-result color-circle "+value+"' style='background: "+value+";'></div>")
+                    palette.empty()
                     palette.append(new_object)
                 }                
                 
