@@ -36,6 +36,7 @@ user = {
 scores = {
     "sec_1/q1/1": 0,
     "sec_1/q1/2": 0,
+    "sec_1/q1/3": 0,
     "sec_2/q1/1": 0,
     "sec_2/q1/2": 0,
     "sec_2/q1/6": 0,
@@ -143,6 +144,7 @@ def display_learncolorfilm():
 def quiz_sec1_cover():
     global user
     global text
+    global scores
     user = {
         "score": 0,
         "sec_1/q1/1": "",
@@ -156,8 +158,21 @@ def quiz_sec1_cover():
         "sec_2/q2/4": [],
         "sec_2/q3/5": []
     }
-    return render_template('quiz_sec1_cover.html', user=user, text=text["quiz_sec_1"], flow=flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js", section= '1')
-    # return render_template('quiz_static.html', user = user, text = text["quiz_sec_1"], flow = flow["quiz/sec_1/cover"])
+    scores = {
+        "sec_1/q1/1": 0,
+        "sec_1/q1/2": 0,
+        "sec_1/q1/3": 0,
+        "sec_2/q1/1": 0,
+        "sec_2/q1/2": 0,
+        "sec_2/q1/6": 0,
+        "sec_2/q1/7": 0,
+        "sec_2/q2/3": 0,
+
+        "sec_2/q2/4": 0,
+        "sec_2/q3/5": 0
+    }
+
+    return render_template('quiz_sec1_cover.html', user=user, text=text["quiz_sec_1"], flow=flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js", section='1')
 
 
 @app.route('/quiz/sec_1/q1/<id>')
@@ -227,7 +242,26 @@ def quiz_sec2_q3(id):
 @app.route('/quiz/end')
 def quiz_end():
     global user
-    return render_template('quiz_end.html', user=user, flow=flow["quiz/end"])
+    section_1 = {}
+    section_1["sec"] = "color mixing"
+    section_1["score"] = 0
+    for sec in ["sec_1/q1/1", "sec_1/q1/2", "sec_1/q1/3"]:
+        if scores[sec] == 1:
+            section_1["score"] += 1
+    section_2 = {}
+    section_2["score"] = 0
+    section_2["sec"] = "Distinguish Comlementary/Analogous Paintings"
+    for sec in ["sec_2/q1/1", "sec_2/q1/2", "sec_2/q1/6", "sec_2/q1/7"]:
+        if scores[sec] == 1:
+            section_2["score"] += 1
+    section_3 = {}
+    section_3["score"] = 0
+    section_3["sec"] = "Choosing Comlementary/Analogous Colors"
+    for sec in ["sec_2/q2/3", "sec_2/q2/4", "sec_2/q3/5", ]:
+        if scores[sec] == 1:
+            section_3["score"] += 1
+    result = [section_1, section_2, section_3]
+    return render_template('quiz_end.html', user=user, flow=flow["quiz/end"], result=result)
 
 
 # update score

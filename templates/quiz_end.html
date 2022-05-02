@@ -4,8 +4,8 @@
 <script>
     let user = {{user|tojson}}
     let flow = {{flow|tojson}}
+    let result = {{result|tojson}}
 </script>
-<script type="text/javascript" src="{{ url_for('static', filename = 'general.js') }}"></script>
 {% endblock %}
 
 
@@ -22,10 +22,20 @@
 {% block content %}
 
     <div class="quiz_summary">
-        <span>Thank you for taking the quiz.</span>
+        <span class="pg_title">Quiz Completed!</span>
         <br>
         <br>
-        <span>Score: {{user.score}}/10</span>
+        <span class="result">Results:</span>
+        <br>
+        {% for sec in result %}
+            <span class="result name">{{sec.sec}}: </span>
+            <span class='result score'>{{sec.score}}</span>
+            <br>
+        {% endfor %}
+        <br>
+        <span class="result">Total Score: </span>
+        <span class="result score">{{user.score}}/10</span>
+            
     </div>
 
 {% endblock %}
