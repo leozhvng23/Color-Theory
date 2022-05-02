@@ -23,7 +23,7 @@ $(document).ready(function(){
     c1.append(painting);
     let r3 = $("<div class='row'></div>");
     c2.append(r3);
-    r3.append("<div class='txt_instruct'><span class='txt_md'>Select a pair of complementary colors from this painting's palette:</span></div>")
+    r3.append("<div class='txt_instruct'><span class='txt_md'>Select a pair of complementary colors from this image's palette:</span></div>")
     let r2 = $("<div class='row'></div>");
     c2.append(r2);
     media.colors.forEach(color => {

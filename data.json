@@ -7,7 +7,7 @@
         "sec_2/q1/2": "analagous",
         "sec_2/q1/6": "analagous",
         "sec_2/q1/7": "complementary",
-        "sec_2/q2/3":["#cf97b3", "#8cb891"],
+        "sec_2/q2/3":["#DC5F50", "#8cb891"],
         "sec_2/q2/4": ["#ee9b28", "#5078b3"],
         "sec_2/q3/5": ["#6a9a75", "#cbc277", "#2f6e57"]
     },
@@ -51,7 +51,7 @@
         "color_context_3":{
             "id":"3",
             "url":"color_interior.jpeg",
-            "colors":["#19306d","#a35033","#492921","#cf97b3","#8ca4b8","#8cb891"],
+            "colors":["#19306d","#DC5F50","#492921","#cf97b3","#8ca4b8","#8cb891"],
             "type":"comlementary"
         },
         "color_context_4":{
