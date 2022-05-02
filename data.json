@@ -265,8 +265,8 @@
             "r_text":"Final score"
         },
         "quiz/end":{
-            "l_link":"/",
-            "l_text":"Home"
+            "l_link":"/quiz/sec_1/cover",
+            "l_text":"Restart Quiz"
         }
     }
 }

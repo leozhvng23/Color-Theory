@@ -2,9 +2,9 @@ let num_dropped = 0
 let dropped_color = []
 $(document).ready(function(){
     let container = $("#interactive");
-    let c1 = $("<div class='col-6'></div>")
+    let c1 = $("<div class='col-7'></div>")
     container.append(c1);
-    let c2 = $("<div class='col-6'></div>")
+    let c2 = $("<div class='col-4'></div>")
     container.append(c2);
     let painting = $('<div>');
     painting.attr("class", "quiz-image-left");
@@ -12,12 +12,12 @@ $(document).ready(function(){
     c1.append(painting);
     let r3 = $("<div class='row'></div>");
     c2.append(r3);
-    r3.append("<div>Select three analogous colors:</div>")
+    r3.append("<div class='txt_instruct'><span class='txt_md'>Select a set of three analogous colors from this painting's palette:</span></div>")
     let r2 = $("<div class='row'></div>");
     c2.append(r2);
     media.colors.forEach(color => {
         let c3 = $("<div class='col-4'></div>");
-        let circle = $("<div class='color_circle'></div>");
+        let circle = $("<div class='color_circle palette-circle-xs'></div>");
         circle.attr("style","background:"+color+";");
         circle.attr("data-color",color);
         circle.attr("id",color.substring(1));
