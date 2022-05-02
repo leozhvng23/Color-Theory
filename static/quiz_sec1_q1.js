@@ -8,6 +8,10 @@ let questions = {
     "2" : {
         "reference" : "#07657b",
         "choices" : ["#FF0000","#0000FF","#FFFF00"],
+    },
+    "3" : {
+        "reference" : "#ffc101",
+        "choices" : ["#FF0000","#0000FF","#FFFF00"],
     }
 }
 
@@ -15,6 +19,7 @@ let num_dropped = 0
 let dropped_color = []
 let num_reset = 0
 let result = ""
+
 
 function mixColor() {
     let c1 = dropped_color[dropped_color.length - 2].toLowerCase()
@@ -94,27 +99,6 @@ $( document ).ready(function(){
                 dropped_color.push(ui.draggable.attr("class").split(" ")[1])
                 if (num_dropped >= 2) {
                     mixColor()
-                    // let data = {};
-                    // data['section'] = ans_section;
-                    // data['answer'] = dropped_color;
-                    // console.log(data['answer']);
-                    // $.ajax({
-                    //     type: "POST",
-                    //     url: "../../../update_ans",                
-                    //     dataType : "json",
-                    //     contentType: "application/json; charset=utf-8",
-                    //     data : JSON.stringify(data),
-                    //     success: function(result){
-                    //         mixColor()
-                    //         $('span.right_footnote').html("Score: "+result.data["score"]+"/10");
-                    //     },
-                    //     error: function(request, status, error){
-                    //         console.log("Error");
-                    //         console.log(request)
-                    //         console.log(status)
-                    //         console.log(error)
-                    //     }
-                    // })
             }
         }
     });
@@ -160,6 +144,29 @@ $( document ).ready(function(){
             $(".main-palette-circle").droppable('disable')
             $(".reset-button").prop("disabled", true);
             $(this).prop("disabled", true);
+            let data = {};
+            data['section'] = ans_section;
+            data['answer'] = result;
+            console.log("and"+data['answer']);
+            $.ajax({
+                type: "POST",
+                url: "../../../update_ans",                
+                dataType : "json",
+                contentType: "application/json; charset=utf-8",
+                data : JSON.stringify(data),
+                success: function(result){
+                    let user = result.data['user'];
+                    let ans = result.data['ans'];
+                    console.log(result.data);
+                    $('span.right_footnote').html("Score: "+user["score"]+"/10");
+                },
+                error: function(request, status, error){
+                    console.log("Error");
+                    console.log(request)
+                    console.log(status)
+                    console.log(error)
+                }
+            })
         }
     });
 })
