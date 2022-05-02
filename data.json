@@ -8,8 +8,8 @@
         "sec_2/q1/6": "analagous",
         "sec_2/q1/7": "complementary",
         "sec_2/q2/3":["#DC5F50", "#8cb891"],
-        "sec_2/q2/4": ["#ee9b28", "#5078b3"],
-        "sec_2/q3/5": ["#6a9a75", "#cbc277", "#2f6e57"]
+        "sec_2/q2/4": ["#ee9b28", "#0771DE"],
+        "sec_2/q3/5": ["#6a9a75", "#89BD4A", "#328992"]
     },
     "media":{
         "color_wheel":{
@@ -57,13 +57,13 @@
         "color_context_4":{
             "id":"4",
             "url":"lemon.jpg",
-            "colors":["#57352a","#5078b3","#ee9b28","#d7dbdf","#9ab4d3","#4c4823"],
+            "colors":["#DB4C04","#0771DE","#ee9b28","#E3ECF5","#FAE45C","#0A3159"],
             "type":"comlementary"
         },
         "color_context_5":{
             "id":"5",
             "url":"nighthawks.png",
-            "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
+            "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#328992","#89BD4A"],
             "type":"analogus"
         },
         "color_context_6":{
