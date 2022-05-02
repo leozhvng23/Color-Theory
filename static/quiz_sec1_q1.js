@@ -20,6 +20,7 @@ let dropped_color = []
 let num_reset = 0
 let result = ""
 
+
 function mixColor() {
     let c1 = dropped_color[dropped_color.length - 2].toLowerCase()
     let c2 = dropped_color[dropped_color.length - 1].toLowerCase()
