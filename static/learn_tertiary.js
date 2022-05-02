@@ -4,13 +4,15 @@ let dropped_color = []
 let learn_interactive_data = {
     "secondary" : {
         "color_list":["#FF0000","#0000FF","#FFFF00"],
-        "example_list":[{"#ff8001":"Orange"},{"#00ff00":"Green"},{"#800180":"Violet"}]
+        "example_list":[{"#ff8001":"Orange"},{"#00ff00":"Green"},{"#800180":"Purple"}]
     },
     "tertiary" : {
         "color_list":["#FF0000","#0000FF","#FFFF00","#ff8100","#099420","#7400b6"],
         "example_list":[{"#ffc101":"Yellow-Orange"},{"#ff4101":"Red-Orange"},
         {"#b3016e":"Red-Purple"},{"#4601db":"Blue-Purple"},
-        {"#07657b":"Blue-Green"},{"#6bca16":"Yellow-Green"}]
+        {"#07657b":"Blue-Green"},{"#6bca16":"Yellow-Green"}],
+        "color_names":{"#ffc101":"Amber","#ff4101":"Vermilion","#b3016e":"Magenta",
+                    "#4601db":"Violet","#07657b":"Teal","#6bca16":"Chartreuse"}
     }
 }
 function mixColor() {
@@ -32,12 +34,13 @@ function mixColor() {
     $(target).empty()
     $(target).css({"background":result})
     $(target).removeClass("palette-circle")
+    $(target).append('<div class = "display-color-name">'+learn_interactive_data["tertiary"]["color_names"][result])
     num_dropped = 0
     dropped_color = []
 }
 
 $( document ).ready(function(){
-    let r1c1 = $('<div class = "col-lg-8 col-md-6 col-sm-12 center-image-left">')
+    let r1c1 = $('<div class = "col-lg-7 col-md-6 col-sm-12 center-image-left">')
     let r1c2 = $('<div class = "col-lg-2 col-md-3 col-sm-12 center-image-right center-image-right-1">')
     let r1c3 = $('<div class = "col-lg-2 col-md-3 col-sm-12 center-image-right center-image-right-2">')
 
