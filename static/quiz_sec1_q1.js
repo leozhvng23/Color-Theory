@@ -89,7 +89,9 @@ $( document ).ready(function(){
                         data : JSON.stringify(data),
                         success: function(result){
                             mixColor()
-                            $('span.right_footnote').html("Score: "+result.data["score"]+"/10");
+                            let user = result.data['user']
+                            let ans = result.data['ans']
+                            $('span.right_footnote').html("Score: "+user.score+"/10");
                         },
                         error: function(request, status, error){
                             console.log("Error");

@@ -42,25 +42,40 @@ scores = {
 
 def update_score(question, ans):
     user[question] = ans
-    print(user)
-    if question in ["sec_1/q1/1", "sec_1/q1/2", "sec_2/q3/5"]:
-        ans.sort()
-        answers[question].sort()
-    if question in ["sec_2/q2/3", "sec_2/q2/3"]:
-        for colorlist in ans:
-            colorlist.sort()
-        ans.sort()
-        for colorlist in answers[question]:
-            colorlist.sort()
-        answers[question].sort()
+    is_correct = 0
+    # if question in ["sec_1/q1/1", "sec_1/q1/2", "sec_2/q3/5"]:
+    #     ans.sort()
+    #     answers[question].sort()
+    # if question in ["sec_2/q2/3", "sec_2/q2/3"]:
+    #     # for colorlist in ans:
+    #     #     colorlist.sort()
+    #     ans.sort()
+    #     for colorlist in answers[question]:
+    #         colorlist.sort()
+    #     answers[question].sort()
+    #     if ans in answers[question]:
+    #         scores[question] = 1
+    #         is_correct = 1
+    #     else:
+    #         scores[question] = 0
+    # else:
+    ans.sort()
+    answers[question].sort()
     if answers[question] == ans:
         scores[question] = 1
+        is_correct = 1
     else:
         scores[question] = 0
     new_score = 0
     for i in scores:
         new_score += scores[i]
     user["score"] = new_score
+    data = {}
+    data["is_correct"] = is_correct
+    data['correct_ans'] = answers[question]
+    data['user_ans'] = ans
+    print(data)
+    return data
 
 @app.route('/')
 def display_home():
@@ -199,8 +214,11 @@ def quiz_end():
 def update_ans():
     global user
     json_data = request.get_json()
-    update_score(json_data['section'], json_data['answer'])
-    return jsonify(data=user)
+    ans = update_score(json_data['section'], json_data['answer'])
+    response = {}
+    response['user'] = user
+    response['ans'] = ans
+    return jsonify(data=response)
 
 #
 #
