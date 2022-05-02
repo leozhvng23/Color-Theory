@@ -7,7 +7,7 @@ $(document).ready(function(){
     let c2 = $("<div class='col-6'></div>")
     container.append(c2);
     let painting = $('<div>');
-    painting.attr("class", "quiz-image");
+    painting.attr("class", "quiz-image-left");
     painting.append("<img src='../../../static/images/"+media.url+"'>");
     c1.append(painting);
     let r3 = $("<div class='row'></div>");

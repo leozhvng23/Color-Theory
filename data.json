@@ -4,6 +4,8 @@
         "sec_1/q1/2":["#0000FF", "#FFFF00"],
         "sec_2/q1/1":"complementary",
         "sec_2/q1/2": "analagous",
+        "sec_2/q1/6": "analagous",
+        "sec_2/q1/7": "complementary",
         "sec_2/q2/3":["#19306d", "#a35033"],
         "sec_2/q2/4": ["#2f6e57", "#412c1e"],
         "sec_2/q3/5": ["#5f513b", "#2f6e57", "#412c1e"]
@@ -62,7 +64,19 @@
             "url":"nighthawks.png",
             "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
             "type":"analogus"
-        } 
+        },
+        "color_context_6":{
+            "id":"6",
+            "url":"orchis.jpg",
+            "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
+            "type":"analogus"
+        },
+        "color_context_7":{
+            "id":"7",
+            "url":"sunflowers.jpg",
+            "colors":["#181f1f","#6a9a75","#cbc277","#5f513b","#2f6e57","#412c1e"],
+            "type":"comlementary"
+        }
     },
 
     "text":{
@@ -210,6 +224,18 @@
         "quiz/sec_2/q1/2":{
             "l_link":"/quiz/sec_2/q1/1",
             "l_text":"Q2.1",
+            "r_link":"/quiz/sec_2/q1/6",
+            "r_text":"Next"
+        },
+        "quiz/sec_2/q1/6":{
+            "l_link":"/quiz/sec_2/q1/2",
+            "l_text":"Q2.2",
+            "r_link":"/quiz/sec_2/q1/7",
+            "r_text":"Next"
+        },
+        "quiz/sec_2/q1/7":{
+            "l_link":"/quiz/sec_2/q1/6",
+            "l_text":"Q2.3",
             "r_link":"/quiz/sec_2/q2/3",
             "r_text":"Next"
         },
