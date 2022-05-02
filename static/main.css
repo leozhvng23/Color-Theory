@@ -185,9 +185,9 @@ a:hover{
     -o-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
     }
     
-    .circle-on-hover {
-       /* box-shadow: 2px 2px 2px var(--lightgray);
-        -webkit-box-shadow: 2px 2px 2px var(--lightgray);*/
+.circle-on-hover {
+    box-shadow: 2px 2px 2px var(--lightgray);
+    -webkit-box-shadow: 2px 2px 2px var(--lightgray);
     }
 
 .circle-on-selected {
@@ -198,12 +198,12 @@ a:hover{
 }
 
 .wrong-color-circle {
-    border: 1px solid red;
+    border: 2px solid var(--red);
 
 }
 
 .correct-color-circle {
-    border: 1px solid greenyellow;
+    border: 2px solid var(--green);
 }
   .mid_drag_circle {
     width: 150px;

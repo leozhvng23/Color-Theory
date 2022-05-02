@@ -20,8 +20,8 @@ flow = json_data["flow"]
 
 user = {
     "score": 0,
-    "sec_1/q1/1": [],
-    "sec_1/q1/2": [],
+    "sec_1/q1/1": "",
+    "sec_1/q1/2": "",
     "sec_2/q1/1": "",
     "sec_2/q1/2": "",
     "sec_2/q1/6": "",
@@ -64,7 +64,7 @@ def update_score(question, ans):
     #     else:
     #         scores[question] = 0
     # else:
-    if question not in ["sec_2/q1/1", "sec_2/q1/2", "sec_2/q1/6", "sec_2/q1/7"]:
+    if question in ["sec_2/q2/3", "sec_2/q2/4", "sec_2/q3/5"]:
         ans.sort()
         answers[question].sort()
     if answers[question] == ans:
