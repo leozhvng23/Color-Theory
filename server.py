@@ -243,20 +243,20 @@ def quiz_sec2_q3(id):
 def quiz_end():
     global user
     section_1 = {}
-    section_1["sec"] = "color mixing"
+    section_1["sec"] = "Color mixing"
     section_1["score"] = 0
     for sec in ["sec_1/q1/1", "sec_1/q1/2", "sec_1/q1/3"]:
         if scores[sec] == 1:
             section_1["score"] += 1
     section_2 = {}
     section_2["score"] = 0
-    section_2["sec"] = "Distinguish Comlementary/Analogous Paintings"
+    section_2["sec"] = "Select comlementary/analogous "
     for sec in ["sec_2/q1/1", "sec_2/q1/2", "sec_2/q1/6", "sec_2/q1/7"]:
         if scores[sec] == 1:
             section_2["score"] += 1
     section_3 = {}
     section_3["score"] = 0
-    section_3["sec"] = "Choosing Comlementary/Analogous Colors"
+    section_3["sec"] = "Pair complementary/analogous colors"
     for sec in ["sec_2/q2/3", "sec_2/q2/4", "sec_2/q3/5", ]:
         if scores[sec] == 1:
             section_3["score"] += 1

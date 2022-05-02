@@ -795,3 +795,17 @@ svg path{
     transform: translate(-50%, -50%);
     width:fit-content 
   }
+
+
+  .result{
+    font-size: 28px;
+  } 
+
+  .result.name{
+      font-size: 26px;
+      color: var(--grey)
+  }
+
+  .result.score{
+
+  }
