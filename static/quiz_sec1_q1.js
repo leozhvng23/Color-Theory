@@ -67,7 +67,7 @@ $( document ).ready(function(){
     r2.append(r2c2)
     r2c2.append('<button class = "reset-button quiz-1-button" title="reset"><i class="fa fa-repeat fa-2xl" aria-hidden="true"></i>')
     r2c2.append('<button class = "confirm-button quiz-1-button" title="submit"><i class="fa fa-check fa-2xl" aria-hidden="true">')
-    $(".interactive_frame").append(r2)
+    $(".interactive_frame_large").append(r2)
 
     let left_ref = $("<div class = 'color-circle palette-circle-med palette-reference div-inline' style='background: "+questions[id]["reference"]+";'></div>")
     c1r1.append(left_ref)

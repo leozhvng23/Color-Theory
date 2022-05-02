@@ -1,6 +1,10 @@
 :root{
     --black: rgb(60, 60, 60);
     --hover: #deb887;
+    --grey:rgb(95, 95, 95); 
+    --lightgray:rgb(175, 175, 175);  
+    --green: rgb(91, 230, 83);
+    --red: rgb(230, 88, 88);
 }
 
 body{
@@ -182,11 +186,8 @@ a:hover{
     }
     
     .circle-on-hover {
-        cursor: pointer;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-        -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
-        -o-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+       /* box-shadow: 2px 2px 2px var(--lightgray);
+        -webkit-box-shadow: 2px 2px 2px var(--lightgray);*/
     }
 
 .circle-on-selected {
@@ -242,31 +243,39 @@ a:hover{
 }
   /* quiz section 2 */
 .quiz-choice-btn {
-      margin: 5px;
+      margin: 20px;
       border: 0px;
-      background-color: lightgray;
-      font-style: italic;
-      color: #a1a1a1;
-      width: 150px;
-      height: 40px;
-      border-radius: 20px;
+      background-color: var(--lightgray);
+      font-size: 18px;
+      color: white;
+      width: 180px;
+      height: 45px;
+      border-radius: 22.5px;
+      /*box-shadow: 2px 2px 2px lightgray*/
   }
 
 .quiz-choice-btn:hover {
-    border: 1px solid #4295f5;
+    color: white;
+    background-color: var(--hover);
+}
+
+.quiz-choice-btn:active {
+    color: white;
+    background-color: var(--hover); 
+    box-shadow: 0px 3px 2px #9e835f inset
 }
 
 .quiz-choice-btn.correct {
-    background-color: green;
-    color: black;
+    background-color: var(--green);
+    box-shadow: 0px 3px 2px  rgb(69, 175, 63) inset 
 }
 
 .quiz-choice-btn.wrong {
-    background-color: red;
-    color: black;
+    background-color: var(--red);
+    box-shadow: 0px 3px 2px rgb(162, 61, 61) inset
 }
 .quiz-choice {
-      margin: 15px;
+      margin-top: 20px;
       text-align: center;
 }
 
@@ -277,12 +286,13 @@ a:hover{
     display: -webkit-flex;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 650px;
     margin: auto;
-    }
+    overflow: hidden;
+}
 
 .quiz-image-center img {
-    border-radius: 5%;
+    border-radius: 30px;
 }
 
 .quiz-image-left {
@@ -347,7 +357,8 @@ a:hover{
     max-width: 600px;
 }
 
-.learn_text{
+.color-col{
+    padding-left: 20px;
 }
 
 .learn_title{
@@ -395,12 +406,13 @@ a:hover{
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     border-radius: 40px;
-    margin: 5px;
 }
 
 .ui-draggable{
     cursor: grab;
     cursor: -webkit-grab;
+    box-shadow: 2px 2px 3px var(--lightgray);
+    -webkit-box-shadow: 2px 2px 3px var(--lightgray);
 }
 
 .ui-draggable:active{
@@ -428,11 +440,11 @@ a:hover{
     align-items: center;
 }
 .palette-circle-bigger {
-    width: 250px;
-    height: 250px;
-    -webkit-border-radius: 125px;
-    -moz-border-radius: 125px;
-    border-radius: 125px;
+    width: 300px;
+    height: 300px;
+    -webkit-border-radius: 100px;
+    -moz-border-radius: 100px;
+    border-radius: 150px;
 }
 .palette-circle-big {
     width: 300px;
@@ -553,12 +565,11 @@ a:hover{
 }
 
 .choose-column {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 320px;
+
+    position: relative;
+    height: 300px;
     margin-top: -20px;
-    width: 400px;
+    width: 480px;
 }
 
 .quiz-1-button {
@@ -573,15 +584,22 @@ a:hover{
 }
 
 .reset-button:hover{
-    background-color: #a1a1a1;
+    background-color: var(--hover);
     color: white;
+}
+
+.reset-button:active{
+    box-shadow: 0px 3px 2px #9e835f inset
 }
 
 .confirm-button:hover{
-    background-color: #a1a1a1;
+    background-color: var(--hover);
     color: white;
 }
 
+.confirm-button:active{
+    box-shadow: 0px 3px 2px #9e835f inset
+}
 
 .floating {
     position: relative;
@@ -599,6 +617,7 @@ a:hover{
     border-radius: 50%;
     display: inline-block;
     background-color: lightgrey;
+    box-shadow: 2px 2px 3px var(--lightgray);
 }
 
 .complementary_circle.left{
@@ -630,6 +649,7 @@ a:hover{
     background-color: lightgrey;
     margin-left: 30px;
     margin-right: 30px;
+    box-shadow: 2px 2px 3px var(--lightgray);
 }
 
 .colorwheel{
@@ -643,7 +663,7 @@ svg path{
 }
 
 .pie_hover{
-    filter: drop-shadow(3px 0 0.4rem rgb(102, 102, 102));
+    filter: drop-shadow(3px 0 0.4rem var(--lightgray));
     z-index: 100; 
 }
 
@@ -653,10 +673,11 @@ svg path{
 
 .instruct_text{
     font-size: 18px;
-    width: 80px;
-    margin-right: 10px;
+    width: 140px;
+    margin-right: -10px;
 }
 
 .button-container{
-    padding-left: 0px;
+    padding-left: 15px;
+    margin-top: 40px;
 }

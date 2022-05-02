@@ -11,7 +11,7 @@ $(document).ready(function(){
     let choice = $('<div>');
     choice.attr("class", "quiz-choice");
     let choice_button_1 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","complementary").attr('id',"complementary");
-    choice_button_1.html('Complimentary');
+    choice_button_1.html('Complementary');
     let choice_button_2 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","analagous").attr("id","analagous");
     choice_button_2.html('Analagous');
     choice.append(choice_button_1);
@@ -42,7 +42,7 @@ $(document).ready(function(){
                 let ans = result.data['ans']
                 if(ans.is_correct == 0){
                     $("#"+ans.user_ans).addClass("wrong");
-                    $("#"+ans.correct_ans).addClass("correct");
+                    /*$("#"+ans.correct_ans).addClass("correct");*/
                 }else{
                     $("#"+ans.user_ans).addClass("correct");
                 }
