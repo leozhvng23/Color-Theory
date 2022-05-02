@@ -10,19 +10,20 @@ $(document).ready(function(){
 
     let choice = $('<div>');
     choice.attr("class", "quiz-choice");
-    let choice_button_1 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","complementary");
+    let choice_button_1 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","complementary").attr('id',"complementary");
     choice_button_1.html('Complimentary');
-    let choice_button_2 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","analagous");
+    let choice_button_2 = $('<button>').attr("class",'quiz-choice-btn').attr("data-choice","analagous").attr("id","analagous");
     choice_button_2.html('Analagous');
     choice.append(choice_button_1);
     choice.append(choice_button_2);
     container.append(choice)
 
-    if (user[ans_section].length > 0) {
-        $(".quiz-choice-btn").filter(function(){
-            return $(this).attr('data-choice') == user[ans_section]
-        }).addClass('selected');
-    }
+    // if (user[ans_section].length > 0) {
+    //     $("button").prop("disabled",true);
+    //     $(".quiz-choice-btn").filter(function(){
+    //         return $(this).attr('data-choice') == user[ans_section]
+    //     }).addClass('selected');
+    // }
 
     
     $(".quiz-choice-btn").click(function (e) { 
@@ -37,10 +38,17 @@ $(document).ready(function(){
             contentType: "application/json; charset=utf-8",
             data : JSON.stringify(data),
             success: function(result){
-                $(".selected").removeClass('selected');
-                $(e.target).addClass('selected');
+                let user = result.data['user']
+                let ans = result.data['ans']
+                if(ans.is_correct == 0){
+                    $("#"+ans.user_ans).addClass("wrong");
+                    $("#"+ans.correct_ans).addClass("correct");
+                }else{
+                    $("#"+ans.user_ans).addClass("correct");
+                }
                 $("button").prop("disabled",true);
-                $('span.right_footnote').html("Score: "+result.data["score"]+"/10")
+                console.log(result.data);
+                $('span.right_footnote').html("Score: "+user.score+"/10")
             },
             error: function(request, status, error){
                 console.log("Error");

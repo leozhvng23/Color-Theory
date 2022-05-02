@@ -175,9 +175,35 @@ a:hover{
     -moz-border-radius: 25px;
     border-radius: 25px;
     margin: 10px auto;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    -moz-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    -o-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.6);
+    }
+    
+    .circle-on-hover {
+        cursor: pointer;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+        -moz-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+        -webkit-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+        -o-box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.6);
+    }
 
-  }
+.circle-on-selected {
+    box-shadow: 0px 0px 10px rgba(99, 127, 254, 0.6);
+    -moz-box-shadow: 0px 0px 10px rgba(99, 127, 254, 0.6);
+    -webkit-box-shadow: 0px 0px 10px rgba(99, 127, 254, 0.6);
+    -o-box-shadow: 0px 0px 10px rgba(99, 127, 254, 0.6);
+}
 
+.wrong-color-circle {
+    border: 1px solid red;
+
+}
+
+.correct-color-circle {
+    border: 1px solid greenyellow;
+}
   .mid_drag_circle {
     width: 150px;
     height: 150px;
@@ -230,8 +256,13 @@ a:hover{
     border: 1px solid #4295f5;
 }
 
-.quiz-choice-btn.selected {
-    background-color: #4295f5;
+.quiz-choice-btn.correct {
+    background-color: green;
+    color: black;
+}
+
+.quiz-choice-btn.wrong {
+    background-color: red;
     color: black;
 }
 .quiz-choice {
