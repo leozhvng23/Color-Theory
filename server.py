@@ -59,8 +59,9 @@ def update_score(question, ans):
     #     else:
     #         scores[question] = 0
     # else:
-    ans.sort()
-    answers[question].sort()
+    if question not in ["sec_2/q1/1", "sec_2/q1/2"]:
+        ans.sort()
+        answers[question].sort()
     if answers[question] == ans:
         scores[question] = 1
         is_correct = 1
