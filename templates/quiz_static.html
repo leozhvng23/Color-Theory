@@ -4,6 +4,11 @@
 <script>
     let user = {{user|tojson}}
     let flow = {{flow|tojson}}
+
+    function showHint() {
+        let popup = document.getElementById("myPopup");
+        popup.classList.toggle("show");
+    }
 </script>
 <!-- <script type="text/javascript" src="{{ url_for('static', filename = js_path) }}"></script> -->
 {% endblock %}
@@ -44,6 +49,9 @@
 
 {% block footnote %} 
     <div class="left_footnote"><span class="pg_footnote left_footnote">Section: {{section}}/3</span></div>
+    <div class="mid_footnote popup"><button id="hint-button" onclick="showHint()" title="Toggle Colowheel"><i class="fa fa-eyedropper fa-lg" aria-hidden="true"></i></button>
+        <span class="popuptext" id="myPopup"><img src="{{url_for('static', filename='images/color_wheel_12_sides.png')}}" class="popup-image"></span>
+    </div> 
     <div class="right_footnote"><span class="pg_footnote right_footnote">Score: {{user["score"]}}/10</span></div>
 {% endblock%}
 
