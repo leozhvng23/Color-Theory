@@ -156,7 +156,7 @@ def quiz_sec1_cover():
         "sec_2/q2/4": [],
         "sec_2/q3/5": []
     }
-    return render_template('quiz_sec1_cover.html', user=user, text=text["quiz_sec_1"], flow=flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js")
+    return render_template('quiz_sec1_cover.html', user=user, text=text["quiz_sec_1"], flow=flow["quiz/sec_1/cover"], js_path="quiz_sec1_cover.js", section= '1')
     # return render_template('quiz_static.html', user = user, text = text["quiz_sec_1"], flow = flow["quiz/sec_1/cover"])
 
 

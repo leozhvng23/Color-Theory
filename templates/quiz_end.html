@@ -21,8 +21,17 @@
 
 {% block content %}
 <div class="end_score">
-    <div><span>Thank you for taking the  Quiz</span></div>
-    <div><span>Score: {{user.score}}/10</span></div>
+    <div class="learn_frame">
+        <div class="interactive_frame_large">
+            <div class="row container interact" id="interactive">
+                <div class="col justify-content-center">
+                    <div><span>Thank you for taking the quiz.</span></div>
+                    <div><span>Score: {{user.score}}/10</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
 </div>
 
 
