@@ -51,22 +51,6 @@ scores = {
 def update_score(question, ans):
     user[question] = ans
     is_correct = 0
-    # if question in ["sec_1/q1/1", "sec_1/q1/2", "sec_2/q3/5"]:
-    #     ans.sort()
-    #     answers[question].sort()
-    # if question in ["sec_2/q2/3", "sec_2/q2/3"]:
-    #     # for colorlist in ans:
-    #     #     colorlist.sort()
-    #     ans.sort()
-    #     for colorlist in answers[question]:
-    #         colorlist.sort()
-    #     answers[question].sort()
-    #     if ans in answers[question]:
-    #         scores[question] = 1
-    #         is_correct = 1
-    #     else:
-    #         scores[question] = 0
-    # else:
     if question in ["sec_2/q2/3", "sec_2/q2/4", "sec_2/q3/5"]:
         ans.sort()
         answers[question].sort()
@@ -274,48 +258,6 @@ def update_ans():
     response['user'] = user
     response['ans'] = ans
     return jsonify(data=response)
-
-#
-#
-#
-#
-#
-# ====== BELOW ARE THE NEW QUIZ TEMPLATES ======
-# need a new route for each quiz page
-#
-# the jQuery templates are:
-#   quiz_sec1.js
-#   quiz_sec2_part1.js
-#   quiz_sec2_part2.js
-#
-#
-#
-#
-#
-
-# template for static quiz page
-
-
-@app.route('/quiz/static_template/<section>')
-def quiz_static_template(section):
-    global user
-    return render_template('quiz_static.html', user=user, flow="/learn", media=media["color_wheel"], text=text["quiz_sec_"+section], section=section)
-
-# template for static(left) interactive(right) quiz page
-
-
-@app.route('/quiz/static_interactive_template')
-def quiz_static_interactive_template():
-    global user
-    return render_template('quiz_static_interactive.html', user=user, flow="/learn", media=media["color_context_5"], text=text["quiz_sec_2"], section=2, colors=colors, js_path="quiz_sec2_part1.js")
-
-# template for page with no text and just interactive module
-
-
-@app.route('/quiz/interactive_template')
-def quiz_interactive_template():
-    global user
-    return render_template('quiz_interactive.html', user=user, flow="/learn", media=media["color_wheel"], section=1, js_path="quiz_sec1.js")
 
 
 if __name__ == '__main__':
